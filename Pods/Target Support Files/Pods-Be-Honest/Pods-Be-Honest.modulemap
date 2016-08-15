@@ -1,0 +1,6 @@
+framework module Pods_Be_Honest {
+  umbrella header "Pods-Be-Honest-umbrella.h"
+
+  export *
+  module * { export * }
+}

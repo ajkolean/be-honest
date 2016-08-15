@@ -7,15 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84540DD61D613E4A00EED5BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84540DD51D613E4A00EED5BC /* Constants.swift */; };
 		848CBAD11D6108E8003CFA55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CBAD01D6108E8003CFA55 /* AppDelegate.swift */; };
 		848CBAD31D6108E8003CFA55 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CBAD21D6108E8003CFA55 /* FirstViewController.swift */; };
 		848CBAD51D6108E8003CFA55 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CBAD41D6108E8003CFA55 /* SecondViewController.swift */; };
 		848CBAD81D6108E8003CFA55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAD61D6108E8003CFA55 /* Main.storyboard */; };
 		848CBADA1D6108E8003CFA55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAD91D6108E8003CFA55 /* Assets.xcassets */; };
 		848CBADD1D6108E8003CFA55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848CBADB1D6108E8003CFA55 /* LaunchScreen.storyboard */; };
+		848CBAE51D610932003CFA55 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CBAE41D610932003CFA55 /* LoginViewController.swift */; };
+		848CBAF81D611370003CFA55 /* OstrichSans-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAEF1D611370003CFA55 /* OstrichSans-Black.otf */; };
+		848CBAF91D611370003CFA55 /* OstrichSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF01D611370003CFA55 /* OstrichSans-Bold.otf */; };
+		848CBAFA1D611370003CFA55 /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF11D611370003CFA55 /* OstrichSans-Heavy.otf */; };
+		848CBAFB1D611370003CFA55 /* OstrichSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF21D611370003CFA55 /* OstrichSans-Light.otf */; };
+		848CBAFC1D611370003CFA55 /* OstrichSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF31D611370003CFA55 /* OstrichSans-Medium.otf */; };
+		848CBAFD1D611370003CFA55 /* OstrichSansDashed-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF41D611370003CFA55 /* OstrichSansDashed-Medium.otf */; };
+		848CBAFE1D611370003CFA55 /* OstrichSansInline-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF51D611370003CFA55 /* OstrichSansInline-Italic.otf */; };
+		848CBAFF1D611370003CFA55 /* OstrichSansInline-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF61D611370003CFA55 /* OstrichSansInline-Regular.otf */; };
+		848CBB001D611370003CFA55 /* OstrichSansRounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF71D611370003CFA55 /* OstrichSansRounded-Medium.otf */; };
+		848CBB071D6126AA003CFA55 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBB031D6126AA003CFA55 /* Roboto-Bold.ttf */; };
+		848CBB081D6126AA003CFA55 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBB041D6126AA003CFA55 /* Roboto-Italic.ttf */; };
+		848CBB091D6126AA003CFA55 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBB051D6126AA003CFA55 /* Roboto-Light.ttf */; };
+		848CBB0A1D6126AA003CFA55 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBB061D6126AA003CFA55 /* Roboto-Medium.ttf */; };
+		848CBB101D61311F003CFA55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 848CBB0F1D61311F003CFA55 /* GoogleService-Info.plist */; };
+		848CBB151D613305003CFA55 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CBB121D613305003CFA55 /* Bolts.framework */; };
+		848CBB161D613305003CFA55 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CBB131D613305003CFA55 /* FBSDKCoreKit.framework */; };
+		848CBB171D613305003CFA55 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CBB141D613305003CFA55 /* FBSDKLoginKit.framework */; };
+		848CBB191D613598003CFA55 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CBB181D613598003CFA55 /* LoginButton.swift */; };
+		8501BBEEB00E3EB477C25C11 /* Pods_Be_Honest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C810E0DD67D232B82B928D /* Pods_Be_Honest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31C810E0DD67D232B82B928D /* Pods_Be_Honest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Be_Honest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73E6801FC66AFCAE9ECE3914 /* Pods-Be-Honest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Be-Honest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Be-Honest/Pods-Be-Honest.debug.xcconfig"; sourceTree = "<group>"; };
+		77652FDC43F959AF19A3D1B5 /* Pods-Be-Honest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Be-Honest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Be-Honest/Pods-Be-Honest.release.xcconfig"; sourceTree = "<group>"; };
+		84540DD51D613E4A00EED5BC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		848CBACD1D6108E7003CFA55 /* Be-Honest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Be-Honest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848CBAD01D6108E8003CFA55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848CBAD21D6108E8003CFA55 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +49,25 @@
 		848CBAD91D6108E8003CFA55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		848CBADC1D6108E8003CFA55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848CBADE1D6108E8003CFA55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		848CBAE41D610932003CFA55 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		848CBAEF1D611370003CFA55 /* OstrichSans-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Black.otf"; sourceTree = "<group>"; };
+		848CBAF01D611370003CFA55 /* OstrichSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Bold.otf"; sourceTree = "<group>"; };
+		848CBAF11D611370003CFA55 /* OstrichSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Heavy.otf"; sourceTree = "<group>"; };
+		848CBAF21D611370003CFA55 /* OstrichSans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Light.otf"; sourceTree = "<group>"; };
+		848CBAF31D611370003CFA55 /* OstrichSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Medium.otf"; sourceTree = "<group>"; };
+		848CBAF41D611370003CFA55 /* OstrichSansDashed-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSansDashed-Medium.otf"; sourceTree = "<group>"; };
+		848CBAF51D611370003CFA55 /* OstrichSansInline-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSansInline-Italic.otf"; sourceTree = "<group>"; };
+		848CBAF61D611370003CFA55 /* OstrichSansInline-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSansInline-Regular.otf"; sourceTree = "<group>"; };
+		848CBAF71D611370003CFA55 /* OstrichSansRounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSansRounded-Medium.otf"; sourceTree = "<group>"; };
+		848CBB031D6126AA003CFA55 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		848CBB041D6126AA003CFA55 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		848CBB051D6126AA003CFA55 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		848CBB061D6126AA003CFA55 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		848CBB0F1D61311F003CFA55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		848CBB121D613305003CFA55 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		848CBB131D613305003CFA55 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		848CBB141D613305003CFA55 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		848CBB181D613598003CFA55 /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +75,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8501BBEEB00E3EB477C25C11 /* Pods_Be_Honest.framework in Frameworks */,
+				848CBB161D613305003CFA55 /* FBSDKCoreKit.framework in Frameworks */,
+				848CBB171D613305003CFA55 /* FBSDKLoginKit.framework in Frameworks */,
+				848CBB151D613305003CFA55 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11AFDFEF6164923CF8F71C2C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				73E6801FC66AFCAE9ECE3914 /* Pods-Be-Honest.debug.xcconfig */,
+				77652FDC43F959AF19A3D1B5 /* Pods-Be-Honest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2339AD8ACC492013844122AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31C810E0DD67D232B82B928D /* Pods_Be_Honest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84540DD41D613E3B00EED5BC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				84540DD51D613E4A00EED5BC /* Constants.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		848CBAC41D6108E7003CFA55 = {
 			isa = PBXGroup;
 			children = (
 				848CBACF1D6108E8003CFA55 /* Be-Honest */,
 				848CBACE1D6108E7003CFA55 /* Products */,
+				11AFDFEF6164923CF8F71C2C /* Pods */,
+				2339AD8ACC492013844122AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +131,75 @@
 		848CBACF1D6108E8003CFA55 /* Be-Honest */ = {
 			isa = PBXGroup;
 			children = (
+				84540DD41D613E3B00EED5BC /* Utils */,
+				848CBB111D6132E0003CFA55 /* Frameworks */,
+				848CBAE91D610A17003CFA55 /* Model */,
+				848CBAE81D610A0F003CFA55 /* View */,
+				848CBAE71D610A08003CFA55 /* Controller */,
+				848CBAE61D610A01003CFA55 /* Resources */,
 				848CBAD01D6108E8003CFA55 /* AppDelegate.swift */,
-				848CBAD21D6108E8003CFA55 /* FirstViewController.swift */,
-				848CBAD41D6108E8003CFA55 /* SecondViewController.swift */,
 				848CBAD61D6108E8003CFA55 /* Main.storyboard */,
 				848CBAD91D6108E8003CFA55 /* Assets.xcassets */,
 				848CBADB1D6108E8003CFA55 /* LaunchScreen.storyboard */,
 				848CBADE1D6108E8003CFA55 /* Info.plist */,
+				848CBB0F1D61311F003CFA55 /* GoogleService-Info.plist */,
 			);
 			path = "Be-Honest";
+			sourceTree = "<group>";
+		};
+		848CBAE61D610A01003CFA55 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				848CBAEF1D611370003CFA55 /* OstrichSans-Black.otf */,
+				848CBAF01D611370003CFA55 /* OstrichSans-Bold.otf */,
+				848CBAF11D611370003CFA55 /* OstrichSans-Heavy.otf */,
+				848CBB031D6126AA003CFA55 /* Roboto-Bold.ttf */,
+				848CBB041D6126AA003CFA55 /* Roboto-Italic.ttf */,
+				848CBB051D6126AA003CFA55 /* Roboto-Light.ttf */,
+				848CBB061D6126AA003CFA55 /* Roboto-Medium.ttf */,
+				848CBAF21D611370003CFA55 /* OstrichSans-Light.otf */,
+				848CBAF31D611370003CFA55 /* OstrichSans-Medium.otf */,
+				848CBAF41D611370003CFA55 /* OstrichSansDashed-Medium.otf */,
+				848CBAF51D611370003CFA55 /* OstrichSansInline-Italic.otf */,
+				848CBAF61D611370003CFA55 /* OstrichSansInline-Regular.otf */,
+				848CBAF71D611370003CFA55 /* OstrichSansRounded-Medium.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		848CBAE71D610A08003CFA55 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				848CBAD21D6108E8003CFA55 /* FirstViewController.swift */,
+				848CBAD41D6108E8003CFA55 /* SecondViewController.swift */,
+				848CBAE41D610932003CFA55 /* LoginViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		848CBAE81D610A0F003CFA55 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				848CBB181D613598003CFA55 /* LoginButton.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		848CBAE91D610A17003CFA55 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		848CBB111D6132E0003CFA55 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				848CBB121D613305003CFA55 /* Bolts.framework */,
+				848CBB131D613305003CFA55 /* FBSDKCoreKit.framework */,
+				848CBB141D613305003CFA55 /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +209,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 848CBAE11D6108E8003CFA55 /* Build configuration list for PBXNativeTarget "Be-Honest" */;
 			buildPhases = (
+				84CF82CD4796DD6FD4BCA48E /* [CP] Check Pods Manifest.lock */,
 				848CBAC91D6108E7003CFA55 /* Sources */,
 				848CBACA1D6108E7003CFA55 /* Frameworks */,
 				848CBACB1D6108E7003CFA55 /* Resources */,
+				DCE5E8730EB245245F608A1F /* [CP] Embed Pods Frameworks */,
+				8BCA7E5358C4D7B462EA25D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,13 +263,75 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848CBB0A1D6126AA003CFA55 /* Roboto-Medium.ttf in Resources */,
 				848CBADD1D6108E8003CFA55 /* LaunchScreen.storyboard in Resources */,
+				848CBB071D6126AA003CFA55 /* Roboto-Bold.ttf in Resources */,
+				848CBB091D6126AA003CFA55 /* Roboto-Light.ttf in Resources */,
 				848CBADA1D6108E8003CFA55 /* Assets.xcassets in Resources */,
 				848CBAD81D6108E8003CFA55 /* Main.storyboard in Resources */,
+				848CBAFA1D611370003CFA55 /* OstrichSans-Heavy.otf in Resources */,
+				848CBAFC1D611370003CFA55 /* OstrichSans-Medium.otf in Resources */,
+				848CBAFF1D611370003CFA55 /* OstrichSansInline-Regular.otf in Resources */,
+				848CBAF91D611370003CFA55 /* OstrichSans-Bold.otf in Resources */,
+				848CBAFE1D611370003CFA55 /* OstrichSansInline-Italic.otf in Resources */,
+				848CBB001D611370003CFA55 /* OstrichSansRounded-Medium.otf in Resources */,
+				848CBB101D61311F003CFA55 /* GoogleService-Info.plist in Resources */,
+				848CBAF81D611370003CFA55 /* OstrichSans-Black.otf in Resources */,
+				848CBB081D6126AA003CFA55 /* Roboto-Italic.ttf in Resources */,
+				848CBAFD1D611370003CFA55 /* OstrichSansDashed-Medium.otf in Resources */,
+				848CBAFB1D611370003CFA55 /* OstrichSans-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84CF82CD4796DD6FD4BCA48E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8BCA7E5358C4D7B462EA25D3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Be-Honest/Pods-Be-Honest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCE5E8730EB245245F608A1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Be-Honest/Pods-Be-Honest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		848CBAC91D6108E7003CFA55 /* Sources */ = {
@@ -139,8 +339,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				848CBAD51D6108E8003CFA55 /* SecondViewController.swift in Sources */,
+				848CBB191D613598003CFA55 /* LoginButton.swift in Sources */,
 				848CBAD11D6108E8003CFA55 /* AppDelegate.swift in Sources */,
+				848CBAE51D610932003CFA55 /* LoginViewController.swift in Sources */,
 				848CBAD31D6108E8003CFA55 /* FirstViewController.swift in Sources */,
+				84540DD61D613E4A00EED5BC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,8 +456,13 @@
 		};
 		848CBAE21D6108E8003CFA55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73E6801FC66AFCAE9ECE3914 /* Pods-Be-Honest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Be-Honest",
+				);
 				INFOPLIST_FILE = "Be-Honest/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ajkolean.Be-Honest";
@@ -264,8 +472,13 @@
 		};
 		848CBAE31D6108E8003CFA55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77652FDC43F959AF19A3D1B5 /* Pods-Be-Honest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Be-Honest",
+				);
 				INFOPLIST_FILE = "Be-Honest/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ajkolean.Be-Honest";
@@ -292,6 +505,7 @@
 				848CBAE31D6108E8003CFA55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
