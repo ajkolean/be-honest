@@ -8,22 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		84540DD61D613E4A00EED5BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84540DD51D613E4A00EED5BC /* Constants.swift */; };
+		84816A501D6A855E00BACFC6 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84816A4F1D6A855E00BACFC6 /* MaterialView.swift */; };
 		848CBAD11D6108E8003CFA55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CBAD01D6108E8003CFA55 /* AppDelegate.swift */; };
-		848CBAD31D6108E8003CFA55 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CBAD21D6108E8003CFA55 /* FirstViewController.swift */; };
 		848CBAD51D6108E8003CFA55 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CBAD41D6108E8003CFA55 /* SecondViewController.swift */; };
 		848CBAD81D6108E8003CFA55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAD61D6108E8003CFA55 /* Main.storyboard */; };
 		848CBADA1D6108E8003CFA55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAD91D6108E8003CFA55 /* Assets.xcassets */; };
 		848CBADD1D6108E8003CFA55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848CBADB1D6108E8003CFA55 /* LaunchScreen.storyboard */; };
-		848CBAE51D610932003CFA55 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CBAE41D610932003CFA55 /* LoginViewController.swift */; };
-		848CBAF81D611370003CFA55 /* OstrichSans-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAEF1D611370003CFA55 /* OstrichSans-Black.otf */; };
-		848CBAF91D611370003CFA55 /* OstrichSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF01D611370003CFA55 /* OstrichSans-Bold.otf */; };
-		848CBAFA1D611370003CFA55 /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF11D611370003CFA55 /* OstrichSans-Heavy.otf */; };
-		848CBAFB1D611370003CFA55 /* OstrichSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF21D611370003CFA55 /* OstrichSans-Light.otf */; };
-		848CBAFC1D611370003CFA55 /* OstrichSans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF31D611370003CFA55 /* OstrichSans-Medium.otf */; };
-		848CBAFD1D611370003CFA55 /* OstrichSansDashed-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF41D611370003CFA55 /* OstrichSansDashed-Medium.otf */; };
-		848CBAFE1D611370003CFA55 /* OstrichSansInline-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF51D611370003CFA55 /* OstrichSansInline-Italic.otf */; };
-		848CBAFF1D611370003CFA55 /* OstrichSansInline-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF61D611370003CFA55 /* OstrichSansInline-Regular.otf */; };
-		848CBB001D611370003CFA55 /* OstrichSansRounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAF71D611370003CFA55 /* OstrichSansRounded-Medium.otf */; };
+		848CBAE51D610932003CFA55 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CBAE41D610932003CFA55 /* LoginVC.swift */; };
 		848CBB071D6126AA003CFA55 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBB031D6126AA003CFA55 /* Roboto-Bold.ttf */; };
 		848CBB081D6126AA003CFA55 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBB041D6126AA003CFA55 /* Roboto-Italic.ttf */; };
 		848CBB091D6126AA003CFA55 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBB051D6126AA003CFA55 /* Roboto-Light.ttf */; };
@@ -32,7 +23,22 @@
 		848CBB151D613305003CFA55 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CBB121D613305003CFA55 /* Bolts.framework */; };
 		848CBB161D613305003CFA55 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CBB131D613305003CFA55 /* FBSDKCoreKit.framework */; };
 		848CBB171D613305003CFA55 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CBB141D613305003CFA55 /* FBSDKLoginKit.framework */; };
-		848CBB191D613598003CFA55 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CBB181D613598003CFA55 /* LoginButton.swift */; };
+		84A5259E1D62922C00D38071 /* ostrich-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84A525991D62922C00D38071 /* ostrich-regular.ttf */; };
+		84A5259F1D62922C00D38071 /* OstrichSans-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84A5259A1D62922C00D38071 /* OstrichSans-Black.otf */; };
+		84A525A01D62922C00D38071 /* OstrichSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84A5259B1D62922C00D38071 /* OstrichSans-Bold.otf */; };
+		84A525A11D62922C00D38071 /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84A5259C1D62922C00D38071 /* OstrichSans-Heavy.otf */; };
+		84A525A21D62922C00D38071 /* OstrichSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84A5259D1D62922C00D38071 /* OstrichSans-Light.otf */; };
+		84A525A41D6292F700D38071 /* LoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525A31D6292F700D38071 /* LoginButtonView.swift */; };
+		84A525A61D62A16F00D38071 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525A51D62A16F00D38071 /* Post.swift */; };
+		84A525A81D62A33E00D38071 /* ChoosePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525A71D62A33E00D38071 /* ChoosePostVC.swift */; };
+		84A525AC1D62A4FA00D38071 /* ChoosePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525AB1D62A4FA00D38071 /* ChoosePostView.swift */; };
+		84A525AE1D62A5F700D38071 /* ImageLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525AD1D62A5F700D38071 /* ImageLabelView.swift */; };
+		84A525B01D62BC6E00D38071 /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525AF1D62BC6E00D38071 /* CustomProgressView.swift */; };
+		84A525B21D62C53E00D38071 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525B11D62C53E00D38071 /* PostCell.swift */; };
+		84A525B41D62CD5100D38071 /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525B31D62CD5100D38071 /* AddPostVC.swift */; };
+		84A525B61D6417EE00D38071 /* PostDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525B51D6417EE00D38071 /* PostDetailVC.swift */; };
+		84D268001D6CF18D00A0096B /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D267FF1D6CF18D00A0096B /* MaterialTextField.swift */; };
+		84D268031D6CFCE500A0096B /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D268021D6CFCE500A0096B /* DataService.swift */; };
 		8501BBEEB00E3EB477C25C11 /* Pods_Be_Honest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C810E0DD67D232B82B928D /* Pods_Be_Honest.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,24 +47,16 @@
 		73E6801FC66AFCAE9ECE3914 /* Pods-Be-Honest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Be-Honest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Be-Honest/Pods-Be-Honest.debug.xcconfig"; sourceTree = "<group>"; };
 		77652FDC43F959AF19A3D1B5 /* Pods-Be-Honest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Be-Honest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Be-Honest/Pods-Be-Honest.release.xcconfig"; sourceTree = "<group>"; };
 		84540DD51D613E4A00EED5BC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		84540DD81D6140C100EED5BC /* Be-Honest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Be-Honest-Bridging-Header.h"; sourceTree = "<group>"; };
+		84816A4F1D6A855E00BACFC6 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		848CBACD1D6108E7003CFA55 /* Be-Honest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Be-Honest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848CBAD01D6108E8003CFA55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		848CBAD21D6108E8003CFA55 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		848CBAD41D6108E8003CFA55 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		848CBAD71D6108E8003CFA55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		848CBAD91D6108E8003CFA55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		848CBADC1D6108E8003CFA55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848CBADE1D6108E8003CFA55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		848CBAE41D610932003CFA55 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		848CBAEF1D611370003CFA55 /* OstrichSans-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Black.otf"; sourceTree = "<group>"; };
-		848CBAF01D611370003CFA55 /* OstrichSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Bold.otf"; sourceTree = "<group>"; };
-		848CBAF11D611370003CFA55 /* OstrichSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Heavy.otf"; sourceTree = "<group>"; };
-		848CBAF21D611370003CFA55 /* OstrichSans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Light.otf"; sourceTree = "<group>"; };
-		848CBAF31D611370003CFA55 /* OstrichSans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Medium.otf"; sourceTree = "<group>"; };
-		848CBAF41D611370003CFA55 /* OstrichSansDashed-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSansDashed-Medium.otf"; sourceTree = "<group>"; };
-		848CBAF51D611370003CFA55 /* OstrichSansInline-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSansInline-Italic.otf"; sourceTree = "<group>"; };
-		848CBAF61D611370003CFA55 /* OstrichSansInline-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSansInline-Regular.otf"; sourceTree = "<group>"; };
-		848CBAF71D611370003CFA55 /* OstrichSansRounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSansRounded-Medium.otf"; sourceTree = "<group>"; };
+		848CBAE41D610932003CFA55 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		848CBB031D6126AA003CFA55 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		848CBB041D6126AA003CFA55 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		848CBB051D6126AA003CFA55 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
@@ -67,7 +65,22 @@
 		848CBB121D613305003CFA55 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		848CBB131D613305003CFA55 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		848CBB141D613305003CFA55 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		848CBB181D613598003CFA55 /* LoginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		84A525991D62922C00D38071 /* ostrich-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ostrich-regular.ttf"; sourceTree = "<group>"; };
+		84A5259A1D62922C00D38071 /* OstrichSans-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Black.otf"; sourceTree = "<group>"; };
+		84A5259B1D62922C00D38071 /* OstrichSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Bold.otf"; sourceTree = "<group>"; };
+		84A5259C1D62922C00D38071 /* OstrichSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Heavy.otf"; sourceTree = "<group>"; };
+		84A5259D1D62922C00D38071 /* OstrichSans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Light.otf"; sourceTree = "<group>"; };
+		84A525A31D6292F700D38071 /* LoginButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
+		84A525A51D62A16F00D38071 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		84A525A71D62A33E00D38071 /* ChoosePostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePostVC.swift; sourceTree = "<group>"; };
+		84A525AB1D62A4FA00D38071 /* ChoosePostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePostView.swift; sourceTree = "<group>"; };
+		84A525AD1D62A5F700D38071 /* ImageLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLabelView.swift; sourceTree = "<group>"; };
+		84A525AF1D62BC6E00D38071 /* CustomProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
+		84A525B11D62C53E00D38071 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		84A525B31D62CD5100D38071 /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
+		84A525B51D6417EE00D38071 /* PostDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailVC.swift; sourceTree = "<group>"; };
+		84D267FF1D6CF18D00A0096B /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		84D268021D6CFCE500A0096B /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +144,7 @@
 		848CBACF1D6108E8003CFA55 /* Be-Honest */ = {
 			isa = PBXGroup;
 			children = (
+				84D268011D6CFCD400A0096B /* Services */,
 				84540DD41D613E3B00EED5BC /* Utils */,
 				848CBB111D6132E0003CFA55 /* Frameworks */,
 				848CBAE91D610A17003CFA55 /* Model */,
@@ -143,6 +157,7 @@
 				848CBADB1D6108E8003CFA55 /* LaunchScreen.storyboard */,
 				848CBADE1D6108E8003CFA55 /* Info.plist */,
 				848CBB0F1D61311F003CFA55 /* GoogleService-Info.plist */,
+				84540DD81D6140C100EED5BC /* Be-Honest-Bridging-Header.h */,
 			);
 			path = "Be-Honest";
 			sourceTree = "<group>";
@@ -150,19 +165,15 @@
 		848CBAE61D610A01003CFA55 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				848CBAEF1D611370003CFA55 /* OstrichSans-Black.otf */,
-				848CBAF01D611370003CFA55 /* OstrichSans-Bold.otf */,
-				848CBAF11D611370003CFA55 /* OstrichSans-Heavy.otf */,
+				84A525991D62922C00D38071 /* ostrich-regular.ttf */,
+				84A5259A1D62922C00D38071 /* OstrichSans-Black.otf */,
+				84A5259B1D62922C00D38071 /* OstrichSans-Bold.otf */,
+				84A5259C1D62922C00D38071 /* OstrichSans-Heavy.otf */,
+				84A5259D1D62922C00D38071 /* OstrichSans-Light.otf */,
 				848CBB031D6126AA003CFA55 /* Roboto-Bold.ttf */,
 				848CBB041D6126AA003CFA55 /* Roboto-Italic.ttf */,
 				848CBB051D6126AA003CFA55 /* Roboto-Light.ttf */,
 				848CBB061D6126AA003CFA55 /* Roboto-Medium.ttf */,
-				848CBAF21D611370003CFA55 /* OstrichSans-Light.otf */,
-				848CBAF31D611370003CFA55 /* OstrichSans-Medium.otf */,
-				848CBAF41D611370003CFA55 /* OstrichSansDashed-Medium.otf */,
-				848CBAF51D611370003CFA55 /* OstrichSansInline-Italic.otf */,
-				848CBAF61D611370003CFA55 /* OstrichSansInline-Regular.otf */,
-				848CBAF71D611370003CFA55 /* OstrichSansRounded-Medium.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -170,9 +181,11 @@
 		848CBAE71D610A08003CFA55 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				848CBAD21D6108E8003CFA55 /* FirstViewController.swift */,
 				848CBAD41D6108E8003CFA55 /* SecondViewController.swift */,
-				848CBAE41D610932003CFA55 /* LoginViewController.swift */,
+				848CBAE41D610932003CFA55 /* LoginVC.swift */,
+				84A525A71D62A33E00D38071 /* ChoosePostVC.swift */,
+				84A525B31D62CD5100D38071 /* AddPostVC.swift */,
+				84A525B51D6417EE00D38071 /* PostDetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -180,7 +193,13 @@
 		848CBAE81D610A0F003CFA55 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				848CBB181D613598003CFA55 /* LoginButton.swift */,
+				84A525A31D6292F700D38071 /* LoginButtonView.swift */,
+				84A525AB1D62A4FA00D38071 /* ChoosePostView.swift */,
+				84A525AD1D62A5F700D38071 /* ImageLabelView.swift */,
+				84A525AF1D62BC6E00D38071 /* CustomProgressView.swift */,
+				84A525B11D62C53E00D38071 /* PostCell.swift */,
+				84816A4F1D6A855E00BACFC6 /* MaterialView.swift */,
+				84D267FF1D6CF18D00A0096B /* MaterialTextField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -188,6 +207,7 @@
 		848CBAE91D610A17003CFA55 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				84A525A51D62A16F00D38071 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -200,6 +220,14 @@
 				848CBB141D613305003CFA55 /* FBSDKLoginKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84D268011D6CFCD400A0096B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				84D268021D6CFCE500A0096B /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,22 +292,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				848CBB0A1D6126AA003CFA55 /* Roboto-Medium.ttf in Resources */,
+				84A525A01D62922C00D38071 /* OstrichSans-Bold.otf in Resources */,
 				848CBADD1D6108E8003CFA55 /* LaunchScreen.storyboard in Resources */,
+				84A525A11D62922C00D38071 /* OstrichSans-Heavy.otf in Resources */,
+				84A525A21D62922C00D38071 /* OstrichSans-Light.otf in Resources */,
+				84A5259E1D62922C00D38071 /* ostrich-regular.ttf in Resources */,
 				848CBB071D6126AA003CFA55 /* Roboto-Bold.ttf in Resources */,
 				848CBB091D6126AA003CFA55 /* Roboto-Light.ttf in Resources */,
+				84A5259F1D62922C00D38071 /* OstrichSans-Black.otf in Resources */,
 				848CBADA1D6108E8003CFA55 /* Assets.xcassets in Resources */,
 				848CBAD81D6108E8003CFA55 /* Main.storyboard in Resources */,
-				848CBAFA1D611370003CFA55 /* OstrichSans-Heavy.otf in Resources */,
-				848CBAFC1D611370003CFA55 /* OstrichSans-Medium.otf in Resources */,
-				848CBAFF1D611370003CFA55 /* OstrichSansInline-Regular.otf in Resources */,
-				848CBAF91D611370003CFA55 /* OstrichSans-Bold.otf in Resources */,
-				848CBAFE1D611370003CFA55 /* OstrichSansInline-Italic.otf in Resources */,
-				848CBB001D611370003CFA55 /* OstrichSansRounded-Medium.otf in Resources */,
 				848CBB101D61311F003CFA55 /* GoogleService-Info.plist in Resources */,
-				848CBAF81D611370003CFA55 /* OstrichSans-Black.otf in Resources */,
 				848CBB081D6126AA003CFA55 /* Roboto-Italic.ttf in Resources */,
-				848CBAFD1D611370003CFA55 /* OstrichSansDashed-Medium.otf in Resources */,
-				848CBAFB1D611370003CFA55 /* OstrichSans-Light.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,11 +363,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				848CBAD51D6108E8003CFA55 /* SecondViewController.swift in Sources */,
-				848CBB191D613598003CFA55 /* LoginButton.swift in Sources */,
+				84A525AE1D62A5F700D38071 /* ImageLabelView.swift in Sources */,
 				848CBAD11D6108E8003CFA55 /* AppDelegate.swift in Sources */,
-				848CBAE51D610932003CFA55 /* LoginViewController.swift in Sources */,
-				848CBAD31D6108E8003CFA55 /* FirstViewController.swift in Sources */,
+				84A525B01D62BC6E00D38071 /* CustomProgressView.swift in Sources */,
+				84A525B41D62CD5100D38071 /* AddPostVC.swift in Sources */,
+				84816A501D6A855E00BACFC6 /* MaterialView.swift in Sources */,
+				848CBAE51D610932003CFA55 /* LoginVC.swift in Sources */,
+				84D268031D6CFCE500A0096B /* DataService.swift in Sources */,
 				84540DD61D613E4A00EED5BC /* Constants.swift in Sources */,
+				84A525A81D62A33E00D38071 /* ChoosePostVC.swift in Sources */,
+				84A525A61D62A16F00D38071 /* Post.swift in Sources */,
+				84A525A41D6292F700D38071 /* LoginButtonView.swift in Sources */,
+				84A525B61D6417EE00D38071 /* PostDetailVC.swift in Sources */,
+				84D268001D6CF18D00A0096B /* MaterialTextField.swift in Sources */,
+				84A525AC1D62A4FA00D38071 /* ChoosePostView.swift in Sources */,
+				84A525B21D62C53E00D38071 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +493,7 @@
 			baseConfigurationReference = 73E6801FC66AFCAE9ECE3914 /* Pods-Be-Honest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Be-Honest",
@@ -467,6 +502,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ajkolean.Be-Honest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Be-Honest/Be-Honest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -475,6 +512,7 @@
 			baseConfigurationReference = 77652FDC43F959AF19A3D1B5 /* Pods-Be-Honest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Be-Honest",
@@ -483,6 +521,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ajkolean.Be-Honest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Be-Honest/Be-Honest-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -7,103 +7,271 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		458CA66CE3E2604A543F7FB7BA517A76 /* Pods-Be-Honest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C653CA85B7B6BF97642DABB444BD8DED /* Pods-Be-Honest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5B4B1ACB0401AE24F078AC25E5080D1E /* Pods-Be-Honest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE55FCD3D68F320AFEABFB20CB6ECEC /* Pods-Be-Honest-dummy.m */; };
-		955288C73EBB42F3A81953EF08794BF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		067189BB8F49920F08BF5542BF04D73D /* UIColor+MDCRGB8Bit.m in Sources */ = {isa = PBXBuildFile; fileRef = 204B73C52A116481D665530332490C05 /* UIColor+MDCRGB8Bit.m */; };
+		099AC9A57DCFD4FBE666872C2D428E5A /* MDCGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B186131C6D9BD52557B72389024654 /* MDCGeometry.m */; };
+		184FFA06D2B86EB201903486B2724B61 /* Pods-Be-Honest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C653CA85B7B6BF97642DABB444BD8DED /* Pods-Be-Honest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		242FBC5631BEC40D0DC291FF13CF3A36 /* MDCSwipeToChooseViewOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E7ED5568F06180689FF902F221039C6 /* MDCSwipeToChooseViewOptions.m */; };
+		271811E181389275EC1783330AED0B2A /* MDCSwipeToChooseDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A7F15EEDB2D2C8CABA7F903988D385E /* MDCSwipeToChooseDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3941CF2BFCF55A9F488D15CA4CAA4EDD /* MDCViewState.m in Sources */ = {isa = PBXBuildFile; fileRef = B38AB1DC17F334E699EB6FE7B98209AD /* MDCViewState.m */; };
+		3A3742978DDA98BF47C1871848E907A9 /* UIView+MDCBorderedLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 451C0AB630A34B6D57BE5A9C98A74AD5 /* UIView+MDCBorderedLabel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		47483B710C59DF1D119D21F1A86765C4 /* MDCViewState.h in Headers */ = {isa = PBXBuildFile; fileRef = 572537D82C4B30D81364045E4DC58E98 /* MDCViewState.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		47E59E0DCAF208E6DD94FAD45CAFF2D9 /* MDCPanState.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D5A1877BBB211F4D6F5E99EC651973 /* MDCPanState.m */; };
+		4EB76ABD43C7958B40D3563BEACB90AB /* MDCSwipeToChoose-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E74E0E5345A1F0311F95691CD0D6D766 /* MDCSwipeToChoose-dummy.m */; };
+		569CD97C67B06DDDEC93E6A002E986E4 /* UIView+MDCSwipeToChoose.h in Headers */ = {isa = PBXBuildFile; fileRef = EF2BE6C709F6EF2F65581EA8A15A3317 /* UIView+MDCSwipeToChoose.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		653511536EC95C7EA24381471BEDD6FC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
+		697889EC085E33FCF7370E19311D4A27 /* MDCPanState.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FDA9B6E6B30118E83FB7919246961AB /* MDCPanState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6AA7E1632AAD8269495E368100869EA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		900F1E5C1F540EA158E9B5D6A7C3EFE8 /* MDCSwipeToChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = D16201B90895D844BFC05523DFC326F0 /* MDCSwipeToChooseView.m */; };
+		97BA0608AE3C9CBC317428DB2BDAA8DA /* MDCSwipeToChooseView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E3337DD04922A3E7A08B72066545E1E /* MDCSwipeToChooseView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A82ED66146E88CD8B8CF27D5E455DE60 /* MDCSwipeOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = FDA65295B62047F80DD35A6FDEC88056 /* MDCSwipeOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9D14AB519619ED13A1B32B9C137BE92 /* UIView+MDCBorderedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 43070187DCF69833DD61D4CB4C3D1246 /* UIView+MDCBorderedLabel.m */; };
+		AB3BF2439C81987827B65A693014A88B /* MDCSwipeResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C96E7A8BD425DEC6AEF2292A3D2EC7C /* MDCSwipeResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B086B817720B20773BF43029E4C255C1 /* MDCSwipeToChoose.h in Headers */ = {isa = PBXBuildFile; fileRef = 69EAFEBF31F7647F20EE6FB3DFCA903E /* MDCSwipeToChoose.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B76C081B5D58AEADE0E6D3AA8C54DCF8 /* MDCSwipeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 1465E2C36A0752DFC7D2BA7F9B1685EE /* MDCSwipeResult.m */; };
+		C39EC3D12A033BB7439943FC32DB53C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		D4DAE4CCF916DDDDE29645267D8F3648 /* MDCSwipeToChoose-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CB1EDABD1761760D7A58F719CD5EB296 /* MDCSwipeToChoose-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D711EFA0F42531DF8F99897914F7EB1A /* MDCSwipeOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB43C2E6796B6BC016891E5158CA19 /* MDCSwipeOptions.m */; };
+		DD964CDF5FDB083907516271C9BBED6F /* MDCSwipeDirection.h in Headers */ = {isa = PBXBuildFile; fileRef = FA8B59CDDE978F145616408376909AAD /* MDCSwipeDirection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E5DB37FF784A8F24E177442BF5F3D130 /* UIColor+MDCRGB8Bit.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FBAC292C18AD96C52E4C21A4E6457F2 /* UIColor+MDCRGB8Bit.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E654EF07FDC18ECCCA4BF07EB8D1DB9A /* UIView+MDCSwipeToChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 2322610AE22AB7DCC4698ABC3576F72E /* UIView+MDCSwipeToChoose.m */; };
+		EC6AA485BB88C350631832DE58CAC2DE /* MDCSwipeToChooseViewOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 8203EC53BAE73A946A29BBAA195179F8 /* MDCSwipeToChooseViewOptions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F69ECE4F281DB8F6434ECC16F439262B /* Pods-Be-Honest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE55FCD3D68F320AFEABFB20CB6ECEC /* Pods-Be-Honest-dummy.m */; };
+		FF322829F0DD620DC77F2425B09A7D40 /* MDCGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D7950866FE9C356EC0A5F8A3E16A577 /* MDCGeometry.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		92B97F7979F819DC060D5AB7ABF24995 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B78FB5A0F00D8651C3A145F4BD7B0D42;
+			remoteInfo = MDCSwipeToChoose;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		0E71039831B45BD7B36F6EA99EB5EB3B /* GoogleParsingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleParsingUtilities.framework; path = Frameworks/GoogleParsingUtilities.framework; sourceTree = "<group>"; };
+		07351BE4CD2A52732B93FDC31244F3E4 /* MDCSwipeToChoose.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MDCSwipeToChoose.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07BCDBAC1741D6BE679FCD28E08709BB /* GoogleAuthUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAuthUtilities.framework; path = Frameworks/GoogleAuthUtilities.framework; sourceTree = "<group>"; };
+		0DEB43C2E6796B6BC016891E5158CA19 /* MDCSwipeOptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCSwipeOptions.m; path = MDCSwipeToChoose/Public/Options/MDCSwipeOptions.m; sourceTree = "<group>"; };
+		1465E2C36A0752DFC7D2BA7F9B1685EE /* MDCSwipeResult.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCSwipeResult.m; path = MDCSwipeToChoose/Public/State/MDCSwipeResult.m; sourceTree = "<group>"; };
 		18DBAA4B9774160DBC066F21776E8F6A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1920534E7570FB812C4455E103C4A498 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
-		30236E0324763171621B1BD7E30B4820 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
-		38784703EF7945371191EFBAD8F398B1 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
-		47253EB1C0D6AD99E6298973096A2B14 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		1FBAC292C18AD96C52E4C21A4E6457F2 /* UIColor+MDCRGB8Bit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+MDCRGB8Bit.h"; path = "MDCSwipeToChoose/Internal/UIColor+MDCRGB8Bit.h"; sourceTree = "<group>"; };
+		204B73C52A116481D665530332490C05 /* UIColor+MDCRGB8Bit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MDCRGB8Bit.m"; path = "MDCSwipeToChoose/Internal/UIColor+MDCRGB8Bit.m"; sourceTree = "<group>"; };
+		2322610AE22AB7DCC4698ABC3576F72E /* UIView+MDCSwipeToChoose.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MDCSwipeToChoose.m"; path = "MDCSwipeToChoose/Public/Views/UIView+MDCSwipeToChoose.m"; sourceTree = "<group>"; };
+		2F291911D9EBDD856AEE3ADD2B47639B /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
+		41686EA551916B1563AB2A4C43167867 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		43070187DCF69833DD61D4CB4C3D1246 /* UIView+MDCBorderedLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MDCBorderedLabel.m"; path = "MDCSwipeToChoose/Internal/Views/UIView+MDCBorderedLabel.m"; sourceTree = "<group>"; };
+		451C0AB630A34B6D57BE5A9C98A74AD5 /* UIView+MDCBorderedLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MDCBorderedLabel.h"; path = "MDCSwipeToChoose/Internal/Views/UIView+MDCBorderedLabel.h"; sourceTree = "<group>"; };
+		4A50C0C830C5BB18CAB458CB0981A26E /* FirebaseStorage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseStorage.framework; path = Frameworks/FirebaseStorage.framework; sourceTree = "<group>"; };
+		4A7F15EEDB2D2C8CABA7F903988D385E /* MDCSwipeToChooseDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSwipeToChooseDelegate.h; path = MDCSwipeToChoose/Public/Views/MDCSwipeToChooseDelegate.h; sourceTree = "<group>"; };
+		572537D82C4B30D81364045E4DC58E98 /* MDCViewState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCViewState.h; path = MDCSwipeToChoose/Internal/State/MDCViewState.h; sourceTree = "<group>"; };
 		5D44E48C458CFD9358D1F80B39CB21D0 /* Pods-Be-Honest-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Be-Honest-acknowledgements.plist"; sourceTree = "<group>"; };
-		68A5CB3E11A820C81A2EAEE42D941C99 /* Pods_Be_Honest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Be_Honest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		76D9B9D917E5DDABD12EEA065F567FC5 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Analytics/Sources/Firebase.h; sourceTree = "<group>"; };
-		7747BB04C80C1D9504DFE5B159666B49 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
-		8B0A47B9B63E8C7471516FA57F156ABE /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		8F42A3500A909D6FB12BEAAD7C457342 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		5D7950866FE9C356EC0A5F8A3E16A577 /* MDCGeometry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCGeometry.h; path = MDCSwipeToChoose/Internal/MDCGeometry.h; sourceTree = "<group>"; };
+		5E3337DD04922A3E7A08B72066545E1E /* MDCSwipeToChooseView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSwipeToChooseView.h; path = MDCSwipeToChoose/Public/Views/MDCSwipeToChooseView.h; sourceTree = "<group>"; };
+		66D5A1877BBB211F4D6F5E99EC651973 /* MDCPanState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCPanState.m; path = MDCSwipeToChoose/Public/State/MDCPanState.m; sourceTree = "<group>"; };
+		69EAFEBF31F7647F20EE6FB3DFCA903E /* MDCSwipeToChoose.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSwipeToChoose.h; path = MDCSwipeToChoose/Public/MDCSwipeToChoose.h; sourceTree = "<group>"; };
+		738A00EB2CE5CB0D12E96454A08CDF62 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleSignIn.bundle; path = Resources/GoogleSignIn.bundle; sourceTree = "<group>"; };
+		7504D03D6C73B9173D78A94BD5CE4264 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E7ED5568F06180689FF902F221039C6 /* MDCSwipeToChooseViewOptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCSwipeToChooseViewOptions.m; path = MDCSwipeToChoose/Public/Options/MDCSwipeToChooseViewOptions.m; sourceTree = "<group>"; };
+		8203EC53BAE73A946A29BBAA195179F8 /* MDCSwipeToChooseViewOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSwipeToChooseViewOptions.h; path = MDCSwipeToChoose/Public/Options/MDCSwipeToChooseViewOptions.h; sourceTree = "<group>"; };
+		83BD4629B9A1D5D200AC257AF837E3DD /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		8904E41CAB8812E2CD8D177D98F7E846 /* MDCSwipeToChoose.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MDCSwipeToChoose.xcconfig; sourceTree = "<group>"; };
+		920711C3CC9B177ACAC1090E91C16DDF /* GoogleParsingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleParsingUtilities.framework; path = Frameworks/GoogleParsingUtilities.framework; sourceTree = "<group>"; };
 		92B662BA4F36B5CA96C0AE2C4F772D9B /* Pods-Be-Honest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Be-Honest.modulemap"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9C96E7A8BD425DEC6AEF2292A3D2EC7C /* MDCSwipeResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSwipeResult.h; path = MDCSwipeToChoose/Public/State/MDCSwipeResult.h; sourceTree = "<group>"; };
+		9FDA9B6E6B30118E83FB7919246961AB /* MDCPanState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCPanState.h; path = MDCSwipeToChoose/Public/State/MDCPanState.h; sourceTree = "<group>"; };
+		A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A3B5F46F3BB6C99990AB58921E96CB83 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = Frameworks/GoogleSignIn.framework; sourceTree = "<group>"; };
+		A6825AE7DD442686661CE6C5064FA325 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
+		A6B89D9EB2F7C6DB9B1697D355BE6269 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		AC217DE7A78A4BFA7E72853E476FCF85 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Analytics/Sources/Firebase.h; sourceTree = "<group>"; };
 		B0AF1104D165E93C2B1DCFDC56213380 /* Pods-Be-Honest-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Be-Honest-resources.sh"; sourceTree = "<group>"; };
+		B38AB1DC17F334E699EB6FE7B98209AD /* MDCViewState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCViewState.m; path = MDCSwipeToChoose/Internal/State/MDCViewState.m; sourceTree = "<group>"; };
 		B6965C7E37E40A53D4FFCB35CD5E6EAF /* Pods-Be-Honest-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Be-Honest-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C07DDA1FA9EFA6CDB2ABCF0010EBAF59 /* MDCSwipeToChoose-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDCSwipeToChoose-prefix.pch"; sourceTree = "<group>"; };
+		C08A63003CADA6485E2F939809CF1883 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
 		C653CA85B7B6BF97642DABB444BD8DED /* Pods-Be-Honest-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Be-Honest-umbrella.h"; sourceTree = "<group>"; };
 		C7842A2BE7FAAFDFE1C62DEC41FBF50B /* Pods-Be-Honest-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Be-Honest-frameworks.sh"; sourceTree = "<group>"; };
 		C8EDBA2D1D84EBDF888C25A7258AD3DA /* Pods-Be-Honest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Be-Honest.release.xcconfig"; sourceTree = "<group>"; };
-		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D6152E0A387DC22FC09C9E43DF0A0649 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		C95C3DC9294ACD146B35B00E25929EFD /* Pods_Be_Honest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Be_Honest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1EDABD1761760D7A58F719CD5EB296 /* MDCSwipeToChoose-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MDCSwipeToChoose-umbrella.h"; sourceTree = "<group>"; };
+		CC6542E513DFD878C581FC1BD0E079F6 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		CC657DE93FFD51F6180BBFE16E034DB5 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		D16201B90895D844BFC05523DFC326F0 /* MDCSwipeToChooseView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCSwipeToChooseView.m; path = MDCSwipeToChoose/Public/Views/MDCSwipeToChooseView.m; sourceTree = "<group>"; };
+		DFDA2FC6581F313AABD32CB88E37C852 /* MDCSwipeToChoose.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MDCSwipeToChoose.modulemap; sourceTree = "<group>"; };
+		E4F3CB82FE47F75F28881527B707E4AD /* GoogleAppUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppUtilities.framework; path = Frameworks/GoogleAppUtilities.framework; sourceTree = "<group>"; };
+		E74E0E5345A1F0311F95691CD0D6D766 /* MDCSwipeToChoose-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MDCSwipeToChoose-dummy.m"; sourceTree = "<group>"; };
+		E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		E96EB176584BD64F25CBB5C7AA05E23D /* Pods-Be-Honest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Be-Honest.debug.xcconfig"; sourceTree = "<group>"; };
 		EAE55FCD3D68F320AFEABFB20CB6ECEC /* Pods-Be-Honest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Be-Honest-dummy.m"; sourceTree = "<group>"; };
+		EF2BE6C709F6EF2F65581EA8A15A3317 /* UIView+MDCSwipeToChoose.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MDCSwipeToChoose.h"; path = "MDCSwipeToChoose/Public/Views/UIView+MDCSwipeToChoose.h"; sourceTree = "<group>"; };
+		F4B186131C6D9BD52557B72389024654 /* MDCGeometry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MDCGeometry.m; path = MDCSwipeToChoose/Internal/MDCGeometry.m; sourceTree = "<group>"; };
+		F82F86CEBF8A760AAC268C4522AE0388 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
+		FA8B59CDDE978F145616408376909AAD /* MDCSwipeDirection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSwipeDirection.h; path = MDCSwipeToChoose/Public/State/MDCSwipeDirection.h; sourceTree = "<group>"; };
+		FDA65295B62047F80DD35A6FDEC88056 /* MDCSwipeOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MDCSwipeOptions.h; path = MDCSwipeToChoose/Public/Options/MDCSwipeOptions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		AFB6DA64D8A14D6BD5EC484A24F20740 /* Frameworks */ = {
+		7C6A62FF5864A4C3DFAD94E03467106A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				955288C73EBB42F3A81953EF08794BF0 /* Foundation.framework in Frameworks */,
+				C39EC3D12A033BB7439943FC32DB53C0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDF99D9C19DB76A31944847DE990F247 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6AA7E1632AAD8269495E368100869EA4 /* Foundation.framework in Frameworks */,
+				653511536EC95C7EA24381471BEDD6FC /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		07301720DA20F15C6E656D65B259DF83 /* Frameworks */ = {
+		1DFDEF90E868F722DC45FB48EB987B20 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1920534E7570FB812C4455E103C4A498 /* FirebaseAuth.framework */,
+				E4F3CB82FE47F75F28881527B707E4AD /* GoogleAppUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		25E29BEEC7F2855B39E5E68B985C13D4 /* GoogleSymbolUtilities */ = {
+		1EB6F0729A1F4A75EE9459FCB9174ED5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E9C8085DEA1AEF4D51DA12C0479154B9 /* Frameworks */,
-			);
-			path = GoogleSymbolUtilities;
-			sourceTree = "<group>";
-		};
-		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		4023B542E649FFA2DB5D9B5E304E5306 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				D6152E0A387DC22FC09C9E43DF0A0649 /* GoogleNetworkingUtilities.framework */,
+				07BCDBAC1741D6BE679FCD28E08709BB /* GoogleAuthUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		42F22A560D0E9C4BE10074DAC925220B /* Pods */ = {
+		23A0B3C0B7B6DB08932199A005321CD3 /* GoogleAuthUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				B2A75D815ECF5FE22533330F003A4A24 /* Firebase */,
-				A9066EBDB99E537E1F550885081B8B22 /* FirebaseAnalytics */,
-				E2FAF087529027CE2D406782EF692B09 /* FirebaseAuth */,
-				E4D45FC60E8980A4AD89CE98EA85B06F /* FirebaseInstanceID */,
-				C8E452787544D48609E8500D479BD81F /* GoogleInterchangeUtilities */,
-				A3398BC28E456E0ECBB3EBD29D323844 /* GoogleNetworkingUtilities */,
-				91AEC3ACDDA93E99F78E77F71B57AAC8 /* GoogleParsingUtilities */,
-				25E29BEEC7F2855B39E5E68B985C13D4 /* GoogleSymbolUtilities */,
-				ED4845A9EFA08B40DB3425EA84F60D24 /* GoogleUtilities */,
+				1EB6F0729A1F4A75EE9459FCB9174ED5 /* Frameworks */,
+			);
+			path = GoogleAuthUtilities;
+			sourceTree = "<group>";
+		};
+		23D7F6964B322DB4C39838AFAD14657D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC6542E513DFD878C581FC1BD0E079F6 /* GoogleUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D2A50DC908B1DA83A75C265F26DD7BF /* GoogleNetworkingUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				A3014001199E4960D6450E4DFAA90C1E /* Frameworks */,
+			);
+			path = GoogleNetworkingUtilities;
+			sourceTree = "<group>";
+		};
+		3178AD168EA16E2445C27604D8292339 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6B89D9EB2F7C6DB9B1697D355BE6269 /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36BBDA2B20D386D1C3FB8B3EBB989AEB /* GoogleAppUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				1DFDEF90E868F722DC45FB48EB987B20 /* Frameworks */,
+			);
+			path = GoogleAppUtilities;
+			sourceTree = "<group>";
+		};
+		409E2115E2ED1D8DBC27E9C3A3EFA7EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				920711C3CC9B177ACAC1090E91C16DDF /* GoogleParsingUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		43F2EE876388FD0FD9396BBE63AA0B03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79675A564A3820EECD546A14608A7234 /* Firebase */,
+				CE6273E881ABC0532FC55D756CC32E9E /* FirebaseAnalytics */,
+				C70F8F30B358AE3493FDE0AFA77C5171 /* FirebaseAuth */,
+				75A39B734BB4D1724229E171CBF0F728 /* FirebaseDatabase */,
+				D1D0A890F96F0206D873795B1455395C /* FirebaseInstanceID */,
+				61B46A0AC67618BDF81758FF56D63378 /* FirebaseStorage */,
+				36BBDA2B20D386D1C3FB8B3EBB989AEB /* GoogleAppUtilities */,
+				23A0B3C0B7B6DB08932199A005321CD3 /* GoogleAuthUtilities */,
+				6D0C021BCBCAEE526027CEF15FF08017 /* GoogleInterchangeUtilities */,
+				2D2A50DC908B1DA83A75C265F26DD7BF /* GoogleNetworkingUtilities */,
+				D2E379E32CE42328FC45F19EE0F93984 /* GoogleParsingUtilities */,
+				D8BCCC6AA9BDCA1677907CBDD611E346 /* GoogleSignIn */,
+				C0CF90FA85DA7D82C2C1A78A5CEE6190 /* GoogleSymbolUtilities */,
+				D4D838F6030841E4EE079ECFB7A6FF6C /* GoogleUtilities */,
+				546AC7BB6188680A666980CC101285AC /* MDCSwipeToChoose */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		4799E4C16A19CEEFC666F1C14C8FD768 /* Products */ = {
+		44D7645E7AA81899D8A5241FF009E57A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				68A5CB3E11A820C81A2EAEE42D941C99 /* Pods_Be_Honest.framework */,
+				A3B5F46F3BB6C99990AB58921E96CB83 /* GoogleSignIn.framework */,
 			);
-			name = Products;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D805282A8A0526A6E2A982818B60483 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41686EA551916B1563AB2A4C43167867 /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		546AC7BB6188680A666980CC101285AC /* MDCSwipeToChoose */ = {
+			isa = PBXGroup;
+			children = (
+				5D7950866FE9C356EC0A5F8A3E16A577 /* MDCGeometry.h */,
+				F4B186131C6D9BD52557B72389024654 /* MDCGeometry.m */,
+				9FDA9B6E6B30118E83FB7919246961AB /* MDCPanState.h */,
+				66D5A1877BBB211F4D6F5E99EC651973 /* MDCPanState.m */,
+				FA8B59CDDE978F145616408376909AAD /* MDCSwipeDirection.h */,
+				FDA65295B62047F80DD35A6FDEC88056 /* MDCSwipeOptions.h */,
+				0DEB43C2E6796B6BC016891E5158CA19 /* MDCSwipeOptions.m */,
+				9C96E7A8BD425DEC6AEF2292A3D2EC7C /* MDCSwipeResult.h */,
+				1465E2C36A0752DFC7D2BA7F9B1685EE /* MDCSwipeResult.m */,
+				69EAFEBF31F7647F20EE6FB3DFCA903E /* MDCSwipeToChoose.h */,
+				4A7F15EEDB2D2C8CABA7F903988D385E /* MDCSwipeToChooseDelegate.h */,
+				5E3337DD04922A3E7A08B72066545E1E /* MDCSwipeToChooseView.h */,
+				D16201B90895D844BFC05523DFC326F0 /* MDCSwipeToChooseView.m */,
+				8203EC53BAE73A946A29BBAA195179F8 /* MDCSwipeToChooseViewOptions.h */,
+				7E7ED5568F06180689FF902F221039C6 /* MDCSwipeToChooseViewOptions.m */,
+				572537D82C4B30D81364045E4DC58E98 /* MDCViewState.h */,
+				B38AB1DC17F334E699EB6FE7B98209AD /* MDCViewState.m */,
+				1FBAC292C18AD96C52E4C21A4E6457F2 /* UIColor+MDCRGB8Bit.h */,
+				204B73C52A116481D665530332490C05 /* UIColor+MDCRGB8Bit.m */,
+				451C0AB630A34B6D57BE5A9C98A74AD5 /* UIView+MDCBorderedLabel.h */,
+				43070187DCF69833DD61D4CB4C3D1246 /* UIView+MDCBorderedLabel.m */,
+				EF2BE6C709F6EF2F65581EA8A15A3317 /* UIView+MDCSwipeToChoose.h */,
+				2322610AE22AB7DCC4698ABC3576F72E /* UIView+MDCSwipeToChoose.m */,
+				B0DC1632BB3CB104BB99D649CD07C159 /* Support Files */,
+			);
+			path = MDCSwipeToChoose;
 			sourceTree = "<group>";
 		};
 		5657DB18E2FCE970AB4BDCD08180962B /* Targets Support Files */ = {
@@ -114,87 +282,118 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		61B46A0AC67618BDF81758FF56D63378 /* FirebaseStorage */ = {
+			isa = PBXGroup;
+			children = (
+				E15B15B3DA83DC44E62C2829C9128BF5 /* Frameworks */,
+			);
+			path = FirebaseStorage;
+			sourceTree = "<group>";
+		};
+		6C1AF5D50DFA0A61F9057DD697115384 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F82F86CEBF8A760AAC268C4522AE0388 /* FirebaseDatabase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D0C021BCBCAEE526027CEF15FF08017 /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				81A269D2387D60006AE68872D06B8EC1 /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		75A39B734BB4D1724229E171CBF0F728 /* FirebaseDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				6C1AF5D50DFA0A61F9057DD697115384 /* Frameworks */,
+			);
+			path = FirebaseDatabase;
+			sourceTree = "<group>";
+		};
+		79675A564A3820EECD546A14608A7234 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				8064099CF3044129A8CEB1865869998E /* Analytics */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		7BD61F5C811FE3553C91FA961ADA2736 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F291911D9EBDD856AEE3ADD2B47639B /* FirebaseAuth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D0AE5239E8D2918386E9BB76680839B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				738A00EB2CE5CB0D12E96454A08CDF62 /* GoogleSignIn.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				42F22A560D0E9C4BE10074DAC925220B /* Pods */,
-				4799E4C16A19CEEFC666F1C14C8FD768 /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				43F2EE876388FD0FD9396BBE63AA0B03 /* Pods */,
+				916D5D118736DC8F2C2ED67A6C39925A /* Products */,
 				5657DB18E2FCE970AB4BDCD08180962B /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		8A00A08ED7534E409ED3B63A688412B7 /* Frameworks */ = {
+		8064099CF3044129A8CEB1865869998E /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				8B0A47B9B63E8C7471516FA57F156ABE /* FirebaseAnalytics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		8A9378A7F1F72CBC12ACB3AA9B3052BE /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				76D9B9D917E5DDABD12EEA065F567FC5 /* Firebase.h */,
+				AC217DE7A78A4BFA7E72853E476FCF85 /* Firebase.h */,
 			);
 			name = Analytics;
 			sourceTree = "<group>";
 		};
-		8DFE6682135398102716AA9114A70F6E /* Frameworks */ = {
+		81A269D2387D60006AE68872D06B8EC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8F42A3500A909D6FB12BEAAD7C457342 /* FirebaseInstanceID.framework */,
+				CC657DE93FFD51F6180BBFE16E034DB5 /* GoogleInterchangeUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		91AEC3ACDDA93E99F78E77F71B57AAC8 /* GoogleParsingUtilities */ = {
+		916D5D118736DC8F2C2ED67A6C39925A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A760B194369F41E9F6E59C0A7325B60F /* Frameworks */,
+				07351BE4CD2A52732B93FDC31244F3E4 /* MDCSwipeToChoose.framework */,
+				C95C3DC9294ACD146B35B00E25929EFD /* Pods_Be_Honest.framework */,
 			);
-			path = GoogleParsingUtilities;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		A3398BC28E456E0ECBB3EBD29D323844 /* GoogleNetworkingUtilities */ = {
+		A3014001199E4960D6450E4DFAA90C1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4023B542E649FFA2DB5D9B5E304E5306 /* Frameworks */,
-			);
-			path = GoogleNetworkingUtilities;
-			sourceTree = "<group>";
-		};
-		A760B194369F41E9F6E59C0A7325B60F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0E71039831B45BD7B36F6EA99EB5EB3B /* GoogleParsingUtilities.framework */,
+				C08A63003CADA6485E2F939809CF1883 /* GoogleNetworkingUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A9066EBDB99E537E1F550885081B8B22 /* FirebaseAnalytics */ = {
+		B0DC1632BB3CB104BB99D649CD07C159 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				8A00A08ED7534E409ED3B63A688412B7 /* Frameworks */,
+				7504D03D6C73B9173D78A94BD5CE4264 /* Info.plist */,
+				DFDA2FC6581F313AABD32CB88E37C852 /* MDCSwipeToChoose.modulemap */,
+				8904E41CAB8812E2CD8D177D98F7E846 /* MDCSwipeToChoose.xcconfig */,
+				E74E0E5345A1F0311F95691CD0D6D766 /* MDCSwipeToChoose-dummy.m */,
+				C07DDA1FA9EFA6CDB2ABCF0010EBAF59 /* MDCSwipeToChoose-prefix.pch */,
+				CB1EDABD1761760D7A58F719CD5EB296 /* MDCSwipeToChoose-umbrella.h */,
 			);
-			path = FirebaseAnalytics;
-			sourceTree = "<group>";
-		};
-		AFFCB4A282716F484B0C1887998D3EF5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				30236E0324763171621B1BD7E30B4820 /* GoogleInterchangeUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B2A75D815ECF5FE22533330F003A4A24 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				8A9378A7F1F72CBC12ACB3AA9B3052BE /* Analytics */,
-			);
-			path = Firebase;
+			name = "Support Files";
+			path = "../Target Support Files/MDCSwipeToChoose";
 			sourceTree = "<group>";
 		};
 		B418DFAE87F8A9CE02EBAD0C7DE51B83 /* Pods-Be-Honest */ = {
@@ -215,92 +414,157 @@
 			path = "Target Support Files/Pods-Be-Honest";
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		C0CF90FA85DA7D82C2C1A78A5CEE6190 /* GoogleSymbolUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+				4D805282A8A0526A6E2A982818B60483 /* Frameworks */,
 			);
-			name = Frameworks;
+			path = GoogleSymbolUtilities;
 			sourceTree = "<group>";
 		};
-		C8E452787544D48609E8500D479BD81F /* GoogleInterchangeUtilities */ = {
+		C70F8F30B358AE3493FDE0AFA77C5171 /* FirebaseAuth */ = {
 			isa = PBXGroup;
 			children = (
-				AFFCB4A282716F484B0C1887998D3EF5 /* Frameworks */,
-			);
-			path = GoogleInterchangeUtilities;
-			sourceTree = "<group>";
-		};
-		E2FAF087529027CE2D406782EF692B09 /* FirebaseAuth */ = {
-			isa = PBXGroup;
-			children = (
-				07301720DA20F15C6E656D65B259DF83 /* Frameworks */,
+				7BD61F5C811FE3553C91FA961ADA2736 /* Frameworks */,
 			);
 			path = FirebaseAuth;
 			sourceTree = "<group>";
 		};
-		E31D50E49BF973165637B7DF54AD003A /* Frameworks */ = {
+		CE6273E881ABC0532FC55D756CC32E9E /* FirebaseAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				38784703EF7945371191EFBAD8F398B1 /* GoogleUtilities.framework */,
+				D4FCA34FA599C3FC02D7C70863476179 /* Frameworks */,
 			);
-			name = Frameworks;
+			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
-		E4D45FC60E8980A4AD89CE98EA85B06F /* FirebaseInstanceID */ = {
+		D1D0A890F96F0206D873795B1455395C /* FirebaseInstanceID */ = {
 			isa = PBXGroup;
 			children = (
-				7747BB04C80C1D9504DFE5B159666B49 /* FIRInstanceID.h */,
-				8DFE6682135398102716AA9114A70F6E /* Frameworks */,
+				A6825AE7DD442686661CE6C5064FA325 /* FIRInstanceID.h */,
+				3178AD168EA16E2445C27604D8292339 /* Frameworks */,
 			);
 			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
-		E9C8085DEA1AEF4D51DA12C0479154B9 /* Frameworks */ = {
+		D2E379E32CE42328FC45F19EE0F93984 /* GoogleParsingUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				47253EB1C0D6AD99E6298973096A2B14 /* GoogleSymbolUtilities.framework */,
+				409E2115E2ED1D8DBC27E9C3A3EFA7EE /* Frameworks */,
+			);
+			path = GoogleParsingUtilities;
+			sourceTree = "<group>";
+		};
+		D4D838F6030841E4EE079ECFB7A6FF6C /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				23D7F6964B322DB4C39838AFAD14657D /* Frameworks */,
+			);
+			path = GoogleUtilities;
+			sourceTree = "<group>";
+		};
+		D4FCA34FA599C3FC02D7C70863476179 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83BD4629B9A1D5D200AC257AF837E3DD /* FirebaseAnalytics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		ED4845A9EFA08B40DB3425EA84F60D24 /* GoogleUtilities */ = {
+		D8BCCC6AA9BDCA1677907CBDD611E346 /* GoogleSignIn */ = {
 			isa = PBXGroup;
 			children = (
-				E31D50E49BF973165637B7DF54AD003A /* Frameworks */,
+				44D7645E7AA81899D8A5241FF009E57A /* Frameworks */,
+				7D0AE5239E8D2918386E9BB76680839B /* Resources */,
 			);
-			path = GoogleUtilities;
+			path = GoogleSignIn;
+			sourceTree = "<group>";
+		};
+		E15B15B3DA83DC44E62C2829C9128BF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A50C0C830C5BB18CAB458CB0981A26E /* FirebaseStorage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */,
+				E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		637675CBE74BD26F27224556FE895EE4 /* Headers */ = {
+		88C11C879F98EDF841667F18A0F0F4EE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				458CA66CE3E2604A543F7FB7BA517A76 /* Pods-Be-Honest-umbrella.h in Headers */,
+				184FFA06D2B86EB201903486B2724B61 /* Pods-Be-Honest-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9213FA1DE5F2192934AB8C1517435DB0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF322829F0DD620DC77F2425B09A7D40 /* MDCGeometry.h in Headers */,
+				697889EC085E33FCF7370E19311D4A27 /* MDCPanState.h in Headers */,
+				DD964CDF5FDB083907516271C9BBED6F /* MDCSwipeDirection.h in Headers */,
+				A82ED66146E88CD8B8CF27D5E455DE60 /* MDCSwipeOptions.h in Headers */,
+				AB3BF2439C81987827B65A693014A88B /* MDCSwipeResult.h in Headers */,
+				D4DAE4CCF916DDDDE29645267D8F3648 /* MDCSwipeToChoose-umbrella.h in Headers */,
+				B086B817720B20773BF43029E4C255C1 /* MDCSwipeToChoose.h in Headers */,
+				271811E181389275EC1783330AED0B2A /* MDCSwipeToChooseDelegate.h in Headers */,
+				97BA0608AE3C9CBC317428DB2BDAA8DA /* MDCSwipeToChooseView.h in Headers */,
+				EC6AA485BB88C350631832DE58CAC2DE /* MDCSwipeToChooseViewOptions.h in Headers */,
+				47483B710C59DF1D119D21F1A86765C4 /* MDCViewState.h in Headers */,
+				E5DB37FF784A8F24E177442BF5F3D130 /* UIColor+MDCRGB8Bit.h in Headers */,
+				3A3742978DDA98BF47C1871848E907A9 /* UIView+MDCBorderedLabel.h in Headers */,
+				569CD97C67B06DDDEC93E6A002E986E4 /* UIView+MDCSwipeToChoose.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BD574A471BCC03AE2848980A861A0E5C /* Pods-Be-Honest */ = {
+		7C48C8FD53AC92E6D26547B2566C7D03 /* Pods-Be-Honest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B901D76260D8117C18E81CDD7730C41 /* Build configuration list for PBXNativeTarget "Pods-Be-Honest" */;
+			buildConfigurationList = 5C6D0F36035855813996652D7795EF10 /* Build configuration list for PBXNativeTarget "Pods-Be-Honest" */;
 			buildPhases = (
-				EA47935FE7AD57F980DBF58461BD7BE3 /* Sources */,
-				AFB6DA64D8A14D6BD5EC484A24F20740 /* Frameworks */,
-				637675CBE74BD26F27224556FE895EE4 /* Headers */,
+				DB9768ADB8FD0B7D08FD55755FE28AFE /* Sources */,
+				7C6A62FF5864A4C3DFAD94E03467106A /* Frameworks */,
+				88C11C879F98EDF841667F18A0F0F4EE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1DDBB1B9E502764CE5D5E122527DB92B /* PBXTargetDependency */,
+			);
+			name = "Pods-Be-Honest";
+			productName = "Pods-Be-Honest";
+			productReference = C95C3DC9294ACD146B35B00E25929EFD /* Pods_Be_Honest.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B78FB5A0F00D8651C3A145F4BD7B0D42 /* MDCSwipeToChoose */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A75FA23CB955B5CBAEC519CDA3D18BC9 /* Build configuration list for PBXNativeTarget "MDCSwipeToChoose" */;
+			buildPhases = (
+				671990CD09F7E16BF625F06F646E26BD /* Sources */,
+				EDF99D9C19DB76A31944847DE990F247 /* Frameworks */,
+				9213FA1DE5F2192934AB8C1517435DB0 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-Be-Honest";
-			productName = "Pods-Be-Honest";
-			productReference = 68A5CB3E11A820C81A2EAEE42D941C99 /* Pods_Be_Honest.framework */;
+			name = MDCSwipeToChoose;
+			productName = MDCSwipeToChoose;
+			productReference = 07351BE4CD2A52732B93FDC31244F3E4 /* MDCSwipeToChoose.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -320,30 +584,58 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 4799E4C16A19CEEFC666F1C14C8FD768 /* Products */;
+			productRefGroup = 916D5D118736DC8F2C2ED67A6C39925A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BD574A471BCC03AE2848980A861A0E5C /* Pods-Be-Honest */,
+				B78FB5A0F00D8651C3A145F4BD7B0D42 /* MDCSwipeToChoose */,
+				7C48C8FD53AC92E6D26547B2566C7D03 /* Pods-Be-Honest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EA47935FE7AD57F980DBF58461BD7BE3 /* Sources */ = {
+		671990CD09F7E16BF625F06F646E26BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B4B1ACB0401AE24F078AC25E5080D1E /* Pods-Be-Honest-dummy.m in Sources */,
+				099AC9A57DCFD4FBE666872C2D428E5A /* MDCGeometry.m in Sources */,
+				47E59E0DCAF208E6DD94FAD45CAFF2D9 /* MDCPanState.m in Sources */,
+				D711EFA0F42531DF8F99897914F7EB1A /* MDCSwipeOptions.m in Sources */,
+				B76C081B5D58AEADE0E6D3AA8C54DCF8 /* MDCSwipeResult.m in Sources */,
+				4EB76ABD43C7958B40D3563BEACB90AB /* MDCSwipeToChoose-dummy.m in Sources */,
+				900F1E5C1F540EA158E9B5D6A7C3EFE8 /* MDCSwipeToChooseView.m in Sources */,
+				242FBC5631BEC40D0DC291FF13CF3A36 /* MDCSwipeToChooseViewOptions.m in Sources */,
+				3941CF2BFCF55A9F488D15CA4CAA4EDD /* MDCViewState.m in Sources */,
+				067189BB8F49920F08BF5542BF04D73D /* UIColor+MDCRGB8Bit.m in Sources */,
+				A9D14AB519619ED13A1B32B9C137BE92 /* UIView+MDCBorderedLabel.m in Sources */,
+				E654EF07FDC18ECCCA4BF07EB8D1DB9A /* UIView+MDCSwipeToChoose.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB9768ADB8FD0B7D08FD55755FE28AFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F69ECE4F281DB8F6434ECC16F439262B /* Pods-Be-Honest-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1DDBB1B9E502764CE5D5E122527DB92B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MDCSwipeToChoose;
+			target = B78FB5A0F00D8651C3A145F4BD7B0D42 /* MDCSwipeToChoose */;
+			targetProxy = 92B97F7979F819DC060D5AB7ABF24995 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		302BE42D57919C0F30E603826FDB55CF /* Debug */ = {
+		379171A5437B36FB3B74D595B00DF10B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E96EB176584BD64F25CBB5C7AA05E23D /* Pods-Be-Honest.debug.xcconfig */;
+			baseConfigurationReference = 8904E41CAB8812E2CD8D177D98F7E846 /* MDCSwipeToChoose.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -354,18 +646,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Be-Honest/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/MDCSwipeToChoose/MDCSwipeToChoose-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MDCSwipeToChoose/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Be-Honest/Pods-Be-Honest.modulemap";
+				MODULEMAP_FILE = "Target Support Files/MDCSwipeToChoose/MDCSwipeToChoose.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Be_Honest;
+				PRODUCT_NAME = MDCSwipeToChoose;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,7 +742,69 @@
 			};
 			name = Debug;
 		};
-		983A42176D1CCCDA374EA672AF8DFDC2 /* Release */ = {
+		7F47B74FE1496A1E0D9E914D6BB68978 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8904E41CAB8812E2CD8D177D98F7E846 /* MDCSwipeToChoose.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MDCSwipeToChoose/MDCSwipeToChoose-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MDCSwipeToChoose/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MDCSwipeToChoose/MDCSwipeToChoose.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MDCSwipeToChoose;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		96C724D7016A6CFC3A6323DFC07878BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E96EB176584BD64F25CBB5C7AA05E23D /* Pods-Be-Honest.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Be-Honest/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Be-Honest/Pods-Be-Honest.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Be_Honest;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C9C1F78B3D312D28AFC33A04BFE1EE55 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8EDBA2D1D84EBDF888C25A7258AD3DA /* Pods-Be-Honest.release.xcconfig */;
 			buildSettings = {
@@ -499,11 +849,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B901D76260D8117C18E81CDD7730C41 /* Build configuration list for PBXNativeTarget "Pods-Be-Honest" */ = {
+		5C6D0F36035855813996652D7795EF10 /* Build configuration list for PBXNativeTarget "Pods-Be-Honest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				302BE42D57919C0F30E603826FDB55CF /* Debug */,
-				983A42176D1CCCDA374EA672AF8DFDC2 /* Release */,
+				96C724D7016A6CFC3A6323DFC07878BE /* Debug */,
+				C9C1F78B3D312D28AFC33A04BFE1EE55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A75FA23CB955B5CBAEC519CDA3D18BC9 /* Build configuration list for PBXNativeTarget "MDCSwipeToChoose" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				379171A5437B36FB3B74D595B00DF10B /* Debug */,
+				7F47B74FE1496A1E0D9E914D6BB68978 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
