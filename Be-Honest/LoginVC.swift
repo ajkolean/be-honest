@@ -17,7 +17,7 @@ class LoginVC: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var googleLogin: UIView!
     let tapFBLogin = UITapGestureRecognizer()
     let tapGoogleLogin = UITapGestureRecognizer()
-
+    static var userId: String!
 
 
     override func viewDidLoad() {
@@ -36,6 +36,7 @@ class LoginVC: UIViewController, GIDSignInUIDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil || GIDSignIn.sharedInstance().hasAuthInKeychain() {
+            LoginVC.userId = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
             self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
         }
     }

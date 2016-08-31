@@ -37,3 +37,10 @@ func setProgressViewColor(amt: Int) -> UIColor {
     }
     
 }
+
+func showErrorAlert(title: String, message: String, controller: UIViewController) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+    let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+    alert.addAction(ok)
+    controller.presentViewController(alert, animated: true, completion: nil)
+}

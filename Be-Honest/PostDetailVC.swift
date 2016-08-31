@@ -62,7 +62,7 @@ class PostDetailVC: UIViewController {
         if img != nil {
             self.postImg.image = img
         } else {
-            let request = DataService.ds.REF_STORAGE.reference().child("images/\(post.imagePath!)")
+            let request = DataService.ds.REF_STORAGE.reference().child(post.imagePath!)
             request.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
                 if (error != nil) {
                     print(error)

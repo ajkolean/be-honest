@@ -13,6 +13,8 @@ import FirebaseDatabase
 
 class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
 
+    @IBOutlet weak var likeBtn: UIImageView!
+    
     var posts:[Post] = []
     let ChoosePostButtonHorizontalPadding:CGFloat = 80.0
     let ChoosePostButtonVerticalPadding:CGFloat = 20.0
@@ -36,21 +38,25 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
         if self.posts.count > 3 {
             return;
         }
-        let userId = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String
-        DataService.ds.REF_POSTS.queryOrderedByChild("ratings").queryStartingAtValue(0).queryLimitedToFirst(2).observeSingleEventOfType(.Value, withBlock: { snapshot in
-            self.posts = [Post]()
+        DataService.ds.REF_POSTS.queryOrderedByChild("ratings").queryStartingAtValue(0).queryLimitedToFirst(4).observeSingleEventOfType(.Value, withBlock: { snapshot in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for snap in snapshots {
-                    
+                outer: for snap in snapshots {
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        if postDict["userId"] as? String == userId{
-                            continue
-                        }
-                        if let raterDict = postDict["raters"] as? Dictionary<String, AnyObject> {
-                            if raterDict[userId!] != nil {
-                                continue
-                            }
-                        }
+//                        if postDict["userId"] as? String == LoginVC.userId{
+//                            continue
+//                        }
+//                        if let raterDict = postDict["raters"] as? Dictionary<String, AnyObject> {
+//                            if raterDict[LoginVC.userId] != nil {
+//                                continue
+//                            }
+//                        }
+//                        print("hello tahertaesr \(snap.key) \(self.posts.count)" )
+//
+//                        for post in self.posts {
+//                            if post.postId == snap.key {
+//                                continue outer
+//                            }
+//                        }
                         print(snap.key)
                         print(postDict)
                         let key = snap.key
@@ -92,8 +98,8 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
 
         getPosts()
         
-        self.constructNopeButton()
-        self.constructLikedButton()
+//        self.constructNopeButton()
+//        self.constructLikedButton()
 
 
     }
@@ -115,10 +121,20 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
         // and "LIKED" on swipes to the right.
         if(wasChosenWithDirection == MDCSwipeDirection.Left){
             print("You noped: \(self.currentPost.question)")
+            DataService.ds.REF_POSTS.child(self.currentPost.postId).updateChildValues([
+                "raters/\(LoginVC.userId)": true,
+                "ratings": self.currentPost.ratings + 1
+                ])
         }
         else{
             
             print("You liked: \(self.currentPost.question)")
+
+            DataService.ds.REF_POSTS.child(self.currentPost.postId).updateChildValues([
+                "raters/\(LoginVC.userId)": true,
+                "likes": self.currentPost.likes + 1,
+                "ratings": self.currentPost.ratings + 1
+            ])
         }
         
         // MDCSwipeToChooseView removes the view from the view hierarchy
@@ -196,31 +212,38 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
         let frontFrame:CGRect = frontCardViewFrame()
         return CGRectMake(frontFrame.origin.x, frontFrame.origin.y + 10.0, CGRectGetWidth(frontFrame), CGRectGetHeight(frontFrame))
     }
-    func constructNopeButton() -> Void{
-        let button:UIButton =  UIButton(type: UIButtonType.System)
-        let image:UIImage = UIImage(named:"nope")!
-        button.frame = CGRectMake(ChoosePostButtonHorizontalPadding, CGRectGetMaxY(CARD_FRAME_RECT) + ChoosePostButtonVerticalPadding, image.size.width, image.size.height)
-        button.setImage(image, forState: UIControlState.Normal)
-        button.tintColor = UIColor(red: 247.0/255.0, green: 91.0/255.0, blue: 37.0/255.0, alpha: 1.0)
-        button.addTarget(self, action: "nopeFrontCardView", forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(button)
-    }
-    
-    func constructLikedButton() -> Void{
-        let button:UIButton = UIButton(type: UIButtonType.System)
-        let image:UIImage = UIImage(named:"liked")!
-        button.frame = CGRectMake(CGRectGetMaxX(CARD_FRAME_RECT) - image.size.width - ChoosePostButtonHorizontalPadding, CGRectGetMaxY(CARD_FRAME_RECT) + ChoosePostButtonVerticalPadding, image.size.width, image.size.height)
-        button.setImage(image, forState:UIControlState.Normal)
-        button.tintColor = UIColor(red: 29.0/255.0, green: 245.0/255.0, blue: 106.0/255.0, alpha: 1.0)
-        button.addTarget(self, action: "likeFrontCardView", forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(button)
-        
-    }
+//    func constructNopeButton() -> Void{
+//        let button:UIButton =  UIButton(type: UIButtonType.System)
+//        var image:UIImage = UIImage(named:"frown")!
+//        
+//       
+//        button.frame = CGRectMake(ChoosePostButtonHorizontalPadding, CGRectGetMaxY(CARD_FRAME_RECT) + ChoosePostButtonVerticalPadding, image.size.width, image.size.height)
+//        button.setImage(image, forState: UIControlState.Normal)
+//        button.tintColor = UIColor(red: 247.0/255.0, green: 91.0/255.0, blue: 37.0/255.0, alpha: 1.0)
+//        button.addTarget(self, action: "nopeFrontCardView", forControlEvents: UIControlEvents.TouchUpInside)
+//        self.view.addSubview(button)
+//    }
+//    
+//    func constructLikedButton() -> Void{
+//        let button:UIButton = UIButton(type: UIButtonType.System)
+//        let image:UIImage = UIImage(named:"smile")!
+//        button.frame = CGRectMake(CGRectGetMaxX(CARD_FRAME_RECT) - image.size.width - ChoosePostButtonHorizontalPadding, CGRectGetMaxY(CARD_FRAME_RECT) + ChoosePostButtonVerticalPadding, image.size.width, image.size.height)
+//        button.setImage(image, forState:UIControlState.Normal)
+//        button.tintColor = UIColor(red: 29.0/255.0, green: 245.0/255.0, blue: 106.0/255.0, alpha: 1.0)
+//        button.addTarget(self, action: "likeFrontCardView", forControlEvents: UIControlEvents.TouchUpInside)
+//        self.view.addSubview(button)
+//        
+//    }
     func nopeFrontCardView() -> Void{
         self.frontCardView.mdc_swipe(MDCSwipeDirection.Left)
     }
     func likeFrontCardView() -> Void{
         self.frontCardView.mdc_swipe(MDCSwipeDirection.Right)
+    }
+
+    @IBAction func likeBtnPressed(sender: AnyObject) {
+        print("like btn pressed")
+        likeFrontCardView()
     }
 
 }

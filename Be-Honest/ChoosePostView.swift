@@ -36,7 +36,7 @@ class ChoosePostView: MDCSwipeToChooseView {
         self.post = post
         
         if self.post.imagePath != nil {
-            let imageRef = DataService.ds.REF_STORAGE.reference().child("images/\(self.post.imagePath!)")
+            let imageRef = DataService.ds.REF_STORAGE.reference().child(self.post.imagePath!)
             imageRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
                 if (error != nil) {
                     print(error)

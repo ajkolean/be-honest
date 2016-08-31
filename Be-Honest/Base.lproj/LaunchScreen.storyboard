@@ -4,6 +4,11 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OstrichSans-Heavy.otf">
+            <string>OstrichSans-Heavy</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -16,7 +21,39 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginbg" translatesAutoresizingMaskIntoConstraints="NO" id="wcz-1F-gJC">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be Honest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9J2-7z-Oiv">
+                                <rect key="frame" x="185" y="95" width="231" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="231" id="Eu8-iZ-qBN"/>
+                                    <constraint firstAttribute="height" constant="86" id="HDI-i7-n1Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OstrichSans-Heavy" family="Ostrich Sans" pointSize="40"/>
+                                <color key="textColor" red="0.92941176469999998" green="0.90588235289999997" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hanger-rotate" translatesAutoresizingMaskIntoConstraints="NO" id="uXO-oG-ac7">
+                                <rect key="frame" x="106" y="189" width="388" height="326"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="388" id="C8f-pd-xah"/>
+                                    <constraint firstAttribute="height" constant="326" id="JZt-KX-nSd"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uXO-oG-ac7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="HIg-9A-6tv"/>
+                            <constraint firstItem="uXO-oG-ac7" firstAttribute="top" secondItem="9J2-7z-Oiv" secondAttribute="bottom" constant="8" id="Vr1-xc-t3H"/>
+                            <constraint firstAttribute="trailing" secondItem="wcz-1F-gJC" secondAttribute="trailing" id="WGh-Q6-pHU"/>
+                            <constraint firstItem="wcz-1F-gJC" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="WrB-Lf-dQd"/>
+                            <constraint firstItem="9J2-7z-Oiv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hgL-yU-7L3"/>
+                            <constraint firstItem="wcz-1F-gJC" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="izX-pB-Nrp"/>
+                            <constraint firstItem="9J2-7z-Oiv" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="75" id="jg0-MJ-VFG"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="wcz-1F-gJC" secondAttribute="bottom" id="yTZ-JP-cg9"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +61,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hanger-rotate" width="700" height="700"/>
+        <image name="loginbg" width="400" height="300"/>
+    </resources>
 </document>

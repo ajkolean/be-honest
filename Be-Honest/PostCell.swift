@@ -39,10 +39,11 @@ class PostCell: UITableViewCell {
         progressBar.progressTintColor = setProgressViewColor(approval)
 
         if post.imagePath != nil {
+            print("IMAGE PATH: \(post.imagePath!)")
             if img != nil {
                 self.postImg.image = img
             } else {
-                request = DataService.ds.REF_STORAGE.reference().child("images/\(post.imagePath!)")
+                request = DataService.ds.REF_STORAGE.reference().child(post.imagePath!)
                 request!.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
                     if (error != nil) {
                         print(error)

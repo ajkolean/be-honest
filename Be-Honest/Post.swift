@@ -31,6 +31,7 @@ import Foundation
         
         var _postId: String!
         var _imagePath: String?
+        var _image: UIImage?
         var _question: String!
         var _ratings: Int?
         var _likes: Int?
@@ -44,6 +45,8 @@ import Foundation
         var imagePath: String? {
             return _imagePath
         }
+        
+        
         
 
     
@@ -101,5 +104,21 @@ import Foundation
             } else {
                 _femaleLikes = 0
             }
+        }
+        
+        
+        func downloadImage() {
+            if self._imagePath != nil {
+                let imageRef = DataService.ds.REF_STORAGE.reference().child(self._imagePath!)
+                imageRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
+                    if (error != nil) {
+                        print(error)
+                    } else {
+                        self._image = UIImage(data: data!)
+                        
+                    }
+                }
+            }
+            
         }
     }
