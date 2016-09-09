@@ -31,12 +31,12 @@ import Foundation
         
         var _postId: String!
         var _imagePath: String?
-        var _image: UIImage?
+        var _image: UIImage!
         var _question: String!
-        var _ratings: Int?
-        var _likes: Int?
-        var _maleLikes: Int?
-        var _femaleLikes: Int?
+        var _ratings: Int!
+        var _likes: Int!
+        var _maleLikes: Int!
+        var _femaleLikes: Int!
         
         var postId: String {
             return _postId
@@ -46,10 +46,11 @@ import Foundation
             return _imagePath
         }
         
+        var image: UIImage {
+            return _image
+        }
         
         
-
-    
         var question: String {
             return _question
         }
@@ -59,66 +60,78 @@ import Foundation
         }
         
         
-        var likes: Int {
-            return _likes!
+   
+        
+        var approvalPercentage: Float {
+            if _ratings == 0 {
+                return 0
+            } else {
+
+                return Float(_likes) / Float(_ratings)
+            }
         }
         
-        var maleLikes: Int {
-            return _maleLikes!
+        var maleApprovalPercentage: Float {
+            if _maleLikes == 0 {
+                return 0
+            } else if _femaleLikes == 0 {
+                return 1.0
+            } else {
+                return Float(_maleLikes) / Float(_femaleLikes + _maleLikes)
+            }
         }
         
-        var femaleLikes: Int {
-            return _femaleLikes!
+        var femaleApprovalPercentage: Float {
+            if _femaleLikes == 0 {
+                return 0
+            } else if _maleLikes == 0 {
+                return 1.0
+            } else {
+                return Float(_femaleLikes) / Float(_femaleLikes + _maleLikes)
+            }
         }
-        
-        
         
         init(postId: String, dictionary: Dictionary<String, AnyObject>) {
             super.init()
             _postId = postId
-            
+            _image = UIImage(named: "defaultavatar")
             _question = dictionary["question"] as? String
             
             if let imgPath = dictionary["imagePath"] as? String {
                 _imagePath = imgPath
             }
+            print(dictionary["ratings"] as? Dictionary< String, Dictionary<String, AnyObject>>)
             
-          
-            if let ratings = dictionary["ratings"] as? Int {
-                _ratings = ratings
-            } else {
-                _ratings = 0
-            }
-            if let likes = dictionary["likes"] as? Int{
-                _likes = likes
-            } else {
+            
+            
+            
+            if let ratings = dictionary["ratings"] as? Dictionary< String, Dictionary<String, AnyObject>> {
+                print(ratings)
                 _likes = 0
-            }
-            if let maleLikes = dictionary["maleLikes"] as? Int {
-                _maleLikes = maleLikes
-            } else {
                 _maleLikes = 0
-            }
-            if let femaleLikes = dictionary["femaleLikes"] as? Int {
-                _femaleLikes = femaleLikes
-            } else {
                 _femaleLikes = 0
-            }
-        }
-        
-        
-        func downloadImage() {
-            if self._imagePath != nil {
-                let imageRef = DataService.ds.REF_STORAGE.reference().child(self._imagePath!)
-                imageRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
-                    if (error != nil) {
-                        print(error)
-                    } else {
-                        self._image = UIImage(data: data!)
-                        
+                for (_, r) in ratings {
+                    if let liked = r["likedit"] as? Bool {
+
+                        if (liked) {
+                            _likes! += 1
+
+                        }
+                    }
+                    if let gender = r["gender"] as? String {
+                        if gender == "male" {
+                            _maleLikes! += 1
+                        } else {
+                            _femaleLikes! += 1
+                        }
                     }
                 }
+                print(ratings.count)
+                _ratings = ratings.count
             }
             
+        
         }
+        
+    
     }

@@ -24,11 +24,9 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-//        posts = defaultPosts()
     }
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-//        posts = defaultPosts()
 
         // Here you can init your properties
     }
@@ -62,6 +60,7 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
                         let key = snap.key
                         let post = Post(postId: key, dictionary: postDict)
                         self.posts.append(post)
+                        print(self.posts[0])
                     }
                     
                 }
@@ -69,7 +68,7 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
             
             // Display the first ChoosePersonView in front. Users can swipe to indicate
             // whether they like or dislike the person displayed.
-            if self.posts.count > 0 {
+            if self.posts.count > 0 && self.frontCardView == nil {
                 self.setMyFrontCardView(self.popPostViewWithFrame(self.frontCardViewFrame())!)
                 self.view.addSubview(self.frontCardView)
             }
@@ -78,7 +77,7 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
             // Display the second ChoosePersonView in back. This view controller uses
             // the MDCSwipeToChooseDelegate protocol methods to update the front and
             // back views after each user swipe.
-            if self.posts.count > 1 {
+            if self.posts.count > 1 && self.backCardView == nil{
                 self.backCardView = self.popPostViewWithFrame(self.backCardViewFrame())!
                 self.view.insertSubview(self.backCardView, belowSubview: self.frontCardView)
             }
@@ -98,8 +97,7 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
 
         getPosts()
         
-//        self.constructNopeButton()
-//        self.constructLikedButton()
+
 
 
     }
@@ -119,24 +117,24 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
         
         // MDCSwipeToChooseView shows "NOPE" on swipes to the left,
         // and "LIKED" on swipes to the right.
+        var rating: Dictionary<String, AnyObject>
+        
         if(wasChosenWithDirection == MDCSwipeDirection.Left){
             print("You noped: \(self.currentPost.question)")
-            DataService.ds.REF_POSTS.child(self.currentPost.postId).updateChildValues([
-                "raters/\(LoginVC.userId)": true,
-                "ratings": self.currentPost.ratings + 1
-                ])
-        }
-        else{
+            rating = ["userId": LoginVC.userId,
+                      "gender": "male",
+                      "likedit": false]
+            
+        } else{
             
             print("You liked: \(self.currentPost.question)")
-
-            DataService.ds.REF_POSTS.child(self.currentPost.postId).updateChildValues([
-                "raters/\(LoginVC.userId)": true,
-                "likes": self.currentPost.likes + 1,
-                "ratings": self.currentPost.ratings + 1
-            ])
+            rating = ["userId": LoginVC.userId,
+                      "gender": "male",
+                      "likedit": true]
         }
         
+        DataService.ds.REF_POSTS.child(self.currentPost.postId).child("ratings").childByAutoId().setValue(rating)
+
         // MDCSwipeToChooseView removes the view from the view hierarchy
         // after it is swiped (this behavior can be customized via the
         // MDCSwipeOptions class). Since the front card view is gone, we
@@ -164,17 +162,7 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
         self.currentPost = frontCardView.post
     }
     
-    func defaultPosts() -> [Post]{
-    
-        return posts
-        
-        // It would be trivial to download these from a web service
-        // as needed, but for the purposes of this sample app we'll
-        // simply store them in memory.
-//        return [Post(image: UIImage(named: "shirt-tie"), question: "Does this shirt and tie match?"), Post(image: UIImage(named: "shirt-tie"), question: "This is a really long question to see how the app handles really long question especially if they are multiple lines")]
-//        return [Person(name: "Finn", image: UIImage(named: "finn"), age: 21, sharedFriends: 3, sharedInterest: 4, photos: 5), Person(name: "Jake", image: UIImage(named: "jake"), age: 21, sharedFriends: 3, sharedInterest: 4, photos: 5), Person(name: "Fiona", image: UIImage(named: "fiona"), age: 21, sharedFriends: 3, sharedInterest: 4, photos: 5), Person(name: "P.Gumball", image: UIImage(named: "prince"), age: 21, sharedFriends: 3, sharedInterest: 4, photos: 5)]
-        
-    }
+
     func popPostViewWithFrame(frame:CGRect) -> ChoosePostView?{
         if(self.posts.count == 0){
             return nil;
@@ -212,28 +200,7 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
         let frontFrame:CGRect = frontCardViewFrame()
         return CGRectMake(frontFrame.origin.x, frontFrame.origin.y + 10.0, CGRectGetWidth(frontFrame), CGRectGetHeight(frontFrame))
     }
-//    func constructNopeButton() -> Void{
-//        let button:UIButton =  UIButton(type: UIButtonType.System)
-//        var image:UIImage = UIImage(named:"frown")!
-//        
-//       
-//        button.frame = CGRectMake(ChoosePostButtonHorizontalPadding, CGRectGetMaxY(CARD_FRAME_RECT) + ChoosePostButtonVerticalPadding, image.size.width, image.size.height)
-//        button.setImage(image, forState: UIControlState.Normal)
-//        button.tintColor = UIColor(red: 247.0/255.0, green: 91.0/255.0, blue: 37.0/255.0, alpha: 1.0)
-//        button.addTarget(self, action: "nopeFrontCardView", forControlEvents: UIControlEvents.TouchUpInside)
-//        self.view.addSubview(button)
-//    }
-//    
-//    func constructLikedButton() -> Void{
-//        let button:UIButton = UIButton(type: UIButtonType.System)
-//        let image:UIImage = UIImage(named:"smile")!
-//        button.frame = CGRectMake(CGRectGetMaxX(CARD_FRAME_RECT) - image.size.width - ChoosePostButtonHorizontalPadding, CGRectGetMaxY(CARD_FRAME_RECT) + ChoosePostButtonVerticalPadding, image.size.width, image.size.height)
-//        button.setImage(image, forState:UIControlState.Normal)
-//        button.tintColor = UIColor(red: 29.0/255.0, green: 245.0/255.0, blue: 106.0/255.0, alpha: 1.0)
-//        button.addTarget(self, action: "likeFrontCardView", forControlEvents: UIControlEvents.TouchUpInside)
-//        self.view.addSubview(button)
-//        
-//    }
+
     func nopeFrontCardView() -> Void{
         self.frontCardView.mdc_swipe(MDCSwipeDirection.Left)
     }
@@ -242,8 +209,11 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
     }
 
     @IBAction func likeBtnPressed(sender: AnyObject) {
-        print("like btn pressed")
         likeFrontCardView()
+    }
+    
+    @IBAction func dislikeBtnPressed(sender: AnyObject) {
+        nopeFrontCardView()
     }
 
 }

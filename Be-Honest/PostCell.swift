@@ -10,11 +10,10 @@ import UIKit
 import FirebaseStorage
 
 class PostCell: UITableViewCell {
-    
-    @IBOutlet weak var postImg: UIImageView!
+
+    @IBOutlet weak var postImg: CustomImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var faceImg: UIImageView!
+    @IBOutlet weak var progressBar: CustomProgressView!
     
     var post: Post!
     var request: FIRStorageReference?
@@ -33,10 +32,9 @@ class PostCell: UITableViewCell {
     func confgureCell(post: Post, img: UIImage?) {
         self.post = post
         titleLabel.text = post.question
-        let approval = (post.likes * 100)/post.ratings
         
-        progressBar.progress = Float(approval) / 100
-        progressBar.progressTintColor = setProgressViewColor(approval)
+        progressBar.progress = post.approvalPercentage
+        progressBar.progressTintColor = setProgressViewColor(post.approvalPercentage)
 
         if post.imagePath != nil {
             print("IMAGE PATH: \(post.imagePath!)")
@@ -44,13 +42,24 @@ class PostCell: UITableViewCell {
                 self.postImg.image = img
             } else {
                 request = DataService.ds.REF_STORAGE.reference().child(post.imagePath!)
-                request!.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
+                let status = request!.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
                     if (error != nil) {
                         print(error)
                     } else {
                         let img = UIImage(data: data!)
                         self.postImg.image = img
+                        self.postImg.progressIndicatorView.reveal()
                         SecondViewController.imageCache.setObject(img!, forKey: post.imagePath!)
+                    }
+                }
+                
+                
+                
+                status.observeStatus(.Progress) { snapshot in
+                    // Upload reported progress
+                    if let progress = snapshot.progress {
+                        print("this is progress \(CGFloat(progress.completedUnitCount) / CGFloat(progress.totalUnitCount))")
+                        self.postImg.progressIndicatorView.progress = CGFloat(progress.completedUnitCount) / CGFloat(progress.totalUnitCount)
                     }
                 }
             }

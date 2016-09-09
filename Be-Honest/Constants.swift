@@ -27,10 +27,10 @@ let STATUS_INVALID_PASSWORD = 17009
 let CARD_FRAME_RECT = CGRectMake(20.0, 60.0, 335.0, 467.0)
 
 
-func setProgressViewColor(amt: Int) -> UIColor {
-    if amt <= 30 {
+func setProgressViewColor(amt: Float) -> UIColor {
+    if amt <= 0.3 {
         return UIColor.redColor()
-    } else if amt <= 60 {
+    } else if amt <= 0.6 {
         return UIColor.yellowColor()
     } else {
         return UIColor.greenColor()
@@ -43,4 +43,17 @@ func showErrorAlert(title: String, message: String, controller: UIViewController
     let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
     alert.addAction(ok)
     controller.presentViewController(alert, animated: true, completion: nil)
+}
+
+
+extension UIImage {
+    func pixellated(scale: Int = 8) -> UIImage? {
+        guard let
+            ciImage = UIKit.CIImage(image: self),
+            filter = CIFilter(name: "CIPixellate") else { return nil }
+        filter.setValue(ciImage, forKey: "inputImage")
+        filter.setValue(scale, forKey: "inputScale")
+        guard let output = filter.outputImage else { return nil }
+        return UIImage(CIImage: output)
+    }
 }

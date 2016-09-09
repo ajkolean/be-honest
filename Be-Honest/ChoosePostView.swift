@@ -29,11 +29,14 @@ class ChoosePostView: MDCSwipeToChooseView {
     var post: Post!
     var informationView: UIView!
     var questionLabel: UILabel!
-
+    
+  
     init(frame: CGRect, post: Post, options: MDCSwipeToChooseViewOptions) {
         
         super.init(frame: frame, options: options)
         self.post = post
+        self.imageView.image = self.post.image
+        self.imageView.contentMode = UIViewContentMode.ScaleAspectFill;
         
         if self.post.imagePath != nil {
             let imageRef = DataService.ds.REF_STORAGE.reference().child(self.post.imagePath!)
@@ -41,13 +44,16 @@ class ChoosePostView: MDCSwipeToChooseView {
                 if (error != nil) {
                     print(error)
                 } else {
-                    self.imageView.contentMode = UIViewContentMode.ScaleAspectFill;
+                    self.contentMode = UIViewContentMode.ScaleAspectFill;
                     self.imageView.image = UIImage(data: data!)
                     
                 }
             }
+            
         }
-                
+
+
+        
         self.autoresizingMask = [UIViewAutoresizing.FlexibleHeight, UIViewAutoresizing.FlexibleWidth]
         UIViewAutoresizing.FlexibleBottomMargin
         
@@ -58,6 +64,7 @@ class ChoosePostView: MDCSwipeToChooseView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
+    
     
     func constructInformationView() -> Void{
         let bottomHeight:CGFloat = 60.0
