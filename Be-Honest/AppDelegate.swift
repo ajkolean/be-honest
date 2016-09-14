@@ -10,10 +10,10 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
-import GoogleSignIn
+import Alamofire
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         FIRApp.configure()
-        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
+
+   
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 
@@ -50,49 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
    
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
      
-        if FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation) {
-            return true
-        }
-        return GIDSignIn.sharedInstance().handleURL(url, sourceApplication: sourceApplication, annotation: annotation)
+        return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+       
     }
-    
-    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
-        
-        if let error = error {
-            print(error)
-        } else {
-            let authentication = user.authentication
-            let credential = FIRGoogleAuthProvider.credentialWithIDToken(authentication.idToken,accessToken: authentication.accessToken)
-            FIRAuth.auth()?.signInWithCredential(credential, completion: { (user, error) in
-                
-                if error != nil {
-                    print("Login failed. \(error)")
-                } else {
-                    print("Logged In!\(user)")
-                    if let user = user {
-                        let newUser = ["provider" : "google"]
-                        DataService.ds.createFirebaseUser(user.uid, user: newUser)
-                        
-                    }
-                    NSUserDefaults.standardUserDefaults().setValue(user?.uid, forKey: KEY_UID)
-                 
-                    
-                }
-                
-                
-            })
-
-        }
-        
-     
-    }
-    
-    func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
-                withError error: NSError!) {
-        // Perform any operations when the user disconnects from app here.
-        // ...
-    }
-
-
-}
+  }
 

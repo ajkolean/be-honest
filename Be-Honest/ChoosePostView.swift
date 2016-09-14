@@ -36,7 +36,8 @@ class ChoosePostView: MDCSwipeToChooseView {
         super.init(frame: frame, options: options)
         self.post = post
         self.imageView.image = self.post.image
-        self.imageView.contentMode = UIViewContentMode.ScaleAspectFill;
+        self.imageView.contentMode = UIViewContentMode.ScaleAspectFit;
+        self.imageView.backgroundColor = UIColor.whiteColor()
         
         if self.post.imagePath != nil {
             let imageRef = DataService.ds.REF_STORAGE.reference().child(self.post.imagePath!)
@@ -67,7 +68,7 @@ class ChoosePostView: MDCSwipeToChooseView {
     
     
     func constructInformationView() -> Void{
-        let bottomHeight:CGFloat = 60.0
+        let bottomHeight:CGFloat = 75.0
         let bottomFrame:CGRect = CGRectMake(0,
                                             CGRectGetHeight(self.bounds) - bottomHeight,
                                             CGRectGetWidth(self.bounds),
@@ -82,15 +83,20 @@ class ChoosePostView: MDCSwipeToChooseView {
     }
     
     func constructQuestionLabel() -> Void{
-        let leftPadding:CGFloat = 12.0
-        let topPadding:CGFloat = 10.0
+        let leftPadding:CGFloat = 10.0
+        let topPadding:CGFloat = 5.0
         let frame:CGRect = CGRectMake(leftPadding,
                                       topPadding,
-                                      floor(CGRectGetWidth(self.informationView.frame) - leftPadding),
-                                      CGRectGetHeight(self.informationView.frame) - topPadding)
+                                      floor(CGRectGetWidth(self.informationView.frame) - leftPadding - leftPadding),
+                                      CGRectGetHeight(self.informationView.frame) - topPadding - topPadding)
         self.questionLabel = UILabel(frame:frame)
         self.questionLabel.lineBreakMode = .ByWordWrapping 
         self.questionLabel.numberOfLines = 0
+        self.questionLabel.font = UIFont(name: "HelveticaNeue", size: 18)
+        self.questionLabel.adjustsFontSizeToFitWidth = true
+        self.questionLabel.minimumScaleFactor = 0.5
+         self.questionLabel.baselineAdjustment = .AlignCenters
+        self.questionLabel.textAlignment = .Center
         self.questionLabel.text = "\(post.question)"
         self.informationView .addSubview(self.questionLabel)
     }

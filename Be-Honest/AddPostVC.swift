@@ -11,14 +11,14 @@ import Firebase
 import FirebaseStorage
 import CoreImage
 
-class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var postImg: UIImageView!
     
     @IBOutlet weak var blurSwitch: UISwitch!
     
     @IBOutlet weak var questionField: UITextField!
-    
+    @IBOutlet weak var postBtn: UIButton!
     @IBOutlet weak var openCameraBtn: UIButton!
     @IBOutlet weak var openPhotoLibBtn: UIButton!
     var imagePicker: UIImagePickerController!
@@ -27,9 +27,15 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+        questionField.delegate = self;
         
-        postImg.layer.cornerRadius = 15.0
+        postImg.layer.cornerRadius = BORDER_RADIUS
         postImg.clipsToBounds = true
+        
+        postBtn.layer.cornerRadius = BORDER_RADIUS
+        postBtn.clipsToBounds = true
+        
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
 
@@ -44,24 +50,47 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         blurFace()
     }
     
-  
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        let currentCharacterCount = textField.text?.characters.count ?? 0
+        if (range.length + range.location > currentCharacterCount){
+            return false
+        }
+        let newLength = currentCharacterCount + string.characters.count - range.length
+        return newLength <= 100
+    }
+
 
     
     func blurFace()  {
-        if let orgImage = postImg.image {
+        if var orgImage = postImg.image {
+            orgImage = scaleAndRotateImage(orgImage)
+           
             
+            let openGLContext = EAGLContext(API: .OpenGLES2)
+            let context = CIContext(EAGLContext: openGLContext)
             let filter = CIFilter(name: "CIPixellate")!
-            let inputImage = CIImage(image: orgImage)
+            filter.setValue(15, forKey: "inputScale")
+            let inputImage = CIImage(CGImage: orgImage.CGImage!)
             filter.setValue(inputImage, forKey: kCIInputImageKey)
             let fullPixellatedImage = filter.outputImage
+            
+            print(orgImage.imageOrientation)
+            
+            //Detect Face
             let options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
-            let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: options)
-            let faces = faceDetector.featuresInImage(inputImage!)
+            let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: options)
+            let faces = faceDetector.featuresInImage(inputImage)
             var maskImage: CIImage!
-            let scale = min(postImg.bounds.size.width / inputImage!.extent.size.width,
-                            postImg.bounds.size.height / inputImage!.extent.size.height)
-            if let faceFeature = faces.first as? CIFaceFeature {
+            let scale = (postImg.bounds.size.width / inputImage.extent.size.width +
+                            postImg.bounds.size.height / inputImage.extent.size.height) / 2
+            for faceFeature in faces {
                 let centerX = faceFeature.bounds.origin.x + faceFeature.bounds.size.width / 2
                 let centerY = faceFeature.bounds.origin.y + faceFeature.bounds.size.height / 2
                 let radius = min(faceFeature.bounds.size.width, faceFeature.bounds.size.height) * scale
@@ -75,7 +104,7 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
                 ])!
             
                 print(radialGradient.attributes)
-                let radialGradientOutputImage = radialGradient.outputImage!.imageByCroppingToRect(inputImage!.extent)
+                let radialGradientOutputImage = radialGradient.outputImage!.imageByCroppingToRect(inputImage.extent)
                 if maskImage == nil {
                     maskImage = radialGradientOutputImage
                 } else {
@@ -94,12 +123,119 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             blendFilter.setValue(maskImage, forKey: kCIInputMaskImageKey)
 
             let blendOutputImage = blendFilter.outputImage!
-            let context = CIContext(options: nil)
             let blendCGImage = context.createCGImage(blendOutputImage, fromRect: blendOutputImage.extent)
+            
             blurImage = UIImage(CGImage: blendCGImage)
         }
+        
+        
 
     }
+    
+    
+    func scaleAndRotateImage(image: UIImage) -> UIImage {
+        let kMaxResolution: CGFloat = 640
+        
+        let imgRef = image.CGImage
+        
+        let width = CGFloat(CGImageGetWidth(imgRef))
+        let height = CGFloat(CGImageGetHeight(imgRef))
+        
+        
+        var transform = CGAffineTransformIdentity
+        var bounds = CGRectMake(0, 0, width, height);
+        if width > kMaxResolution || height > kMaxResolution {
+            let  ratio = width/height;
+            if (ratio > 1) {
+                bounds.size.width = kMaxResolution;
+                bounds.size.height = round(bounds.size.width / ratio)
+            } else {
+                bounds.size.height = kMaxResolution;
+                bounds.size.width = round(bounds.size.height * ratio)
+            }
+        }
+        
+        let scaleRatio = bounds.size.width / width;
+        let imageSize = CGSizeMake(CGFloat(CGImageGetWidth(imgRef)), CGFloat(CGImageGetHeight(imgRef)))
+        let boundHeight: CGFloat?
+        let orient: UIImageOrientation = image.imageOrientation;
+        switch(orient) {
+            
+        case UIImageOrientation.Up: //EXIF = 1
+            transform = CGAffineTransformIdentity;
+            break;
+            
+        case UIImageOrientation.UpMirrored: //EXIF = 2
+            transform = CGAffineTransformMakeTranslation(imageSize.width, 0.0);
+            transform = CGAffineTransformScale(transform, -1.0, 1.0);
+            break;
+            
+        case UIImageOrientation.Down: //EXIF = 3
+            transform = CGAffineTransformMakeTranslation(imageSize.width, imageSize.height);
+            transform = CGAffineTransformRotate(transform, CGFloat(M_PI));
+            break;
+            
+        case UIImageOrientation.DownMirrored: //EXIF = 4
+            transform = CGAffineTransformMakeTranslation(0.0, imageSize.height);
+            transform = CGAffineTransformScale(transform, 1.0, -1.0);
+            break;
+            
+        case UIImageOrientation.LeftMirrored: //EXIF = 5
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight!;
+            transform = CGAffineTransformMakeTranslation(imageSize.height, imageSize.width);
+            transform = CGAffineTransformScale(transform, -1.0, 1.0);
+            transform = CGAffineTransformRotate(transform, 3.0 * CGFloat(M_PI / 2.0))
+            break;
+            
+        case UIImageOrientation.Left: //EXIF = 6
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight!;
+            transform = CGAffineTransformMakeTranslation(0.0, imageSize.width);
+            transform = CGAffineTransformRotate(transform, 3.0 * CGFloat(M_PI) / 2.0);
+            break;
+            
+        case UIImageOrientation.RightMirrored: //EXIF = 7
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight!;
+            transform = CGAffineTransformMakeScale(-1.0, 1.0);
+            transform = CGAffineTransformRotate(transform, CGFloat(M_PI) / 2.0);
+            break;
+            
+        case UIImageOrientation.Right: //EXIF = 8
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight!;
+            transform = CGAffineTransformMakeTranslation(imageSize.height, 0.0);
+            transform = CGAffineTransformRotate(transform, CGFloat(M_PI) / 2.0);
+            break;
+            
+        }
+            UIGraphicsBeginImageContext(bounds.size);
+            
+            let context: CGContextRef = UIGraphicsGetCurrentContext()!;
+            
+            if (orient == UIImageOrientation.Right || orient == UIImageOrientation.Left) {
+                CGContextScaleCTM(context, -scaleRatio, scaleRatio);
+                CGContextTranslateCTM(context, -height, 0);
+            } else {
+                CGContextScaleCTM(context, scaleRatio, -scaleRatio);
+                CGContextTranslateCTM(context, 0, -height);
+            }
+            
+            CGContextConcatCTM(context, transform);
+            
+            CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, width, height), imgRef);
+            let imageCopy: UIImage = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+            
+            return imageCopy;
+        }
+    
+    
 
  
     @IBAction func makePostBtnPressed(sender: AnyObject) {
@@ -117,7 +253,8 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
                         let post = ["userId": LoginVC.userId,
                                     "imagePath": imgPath,
                                     "question": txt,
-                                    "ratings": [],
+                                    "ratings": true,
+                                    "numRatings": 0
                                     
                                     ]
                         

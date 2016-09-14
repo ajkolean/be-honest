@@ -11,7 +11,7 @@ import UIKit
 class MaterialTextField: UITextField {
     
     override func awakeFromNib() {
-        layer.cornerRadius = 2.0
+        layer.cornerRadius = BORDER_RADIUS
         layer.borderColor = UIColor(red: SHADOW_COLOR, green: SHADOW_COLOR, blue: SHADOW_COLOR, alpha: 0.1).CGColor
         layer.borderWidth = 1.0
         

@@ -52,7 +52,7 @@
             circlePathLayer.frame = bounds
             circlePathLayer.lineWidth = 2
             circlePathLayer.fillColor = UIColor.clearColor().CGColor
-            circlePathLayer.strokeColor = UIColor.redColor().CGColor
+            circlePathLayer.strokeColor = UIColor.purpleColor().CGColor
             layer.addSublayer(circlePathLayer)
             backgroundColor = UIColor.whiteColor()
         }

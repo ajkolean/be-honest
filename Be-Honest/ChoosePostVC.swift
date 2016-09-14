@@ -32,39 +32,56 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
     }
     
     func getPosts() {
-        print("get posts called")
+        if (LoginVC.gender == "") {
+            let newPost = Post(postId: "gender", question: "Do you identify as a Male?", imageName: "gender-signs")
+            self.posts.append(newPost)
+        }
         if self.posts.count > 3 {
             return;
         }
-        DataService.ds.REF_POSTS.queryOrderedByChild("ratings").queryStartingAtValue(0).queryLimitedToFirst(4).observeSingleEventOfType(.Value, withBlock: { snapshot in
+        
+        DataService.ds.REF_POSTS.queryOrderedByChild("numRatings").queryStartingAtValue(true).queryLimitedToFirst(10).observeSingleEventOfType(.Value, withBlock: { snapshot in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 outer: for snap in snapshots {
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
-//                        if postDict["userId"] as? String == LoginVC.userId{
-//                            continue
-//                        }
-//                        if let raterDict = postDict["raters"] as? Dictionary<String, AnyObject> {
-//                            if raterDict[LoginVC.userId] != nil {
-//                                continue
-//                            }
-//                        }
-//                        print("hello tahertaesr \(snap.key) \(self.posts.count)" )
-//
-//                        for post in self.posts {
-//                            if post.postId == snap.key {
-//                                continue outer
-//                            }
-//                        }
-                        print(snap.key)
-                        print(postDict)
+                        print(snap)
+                        if postDict["userId"] as? String == LoginVC.userId{
+                            continue
+                        }
+                        if let raterDict = postDict["ratings"] as? Dictionary<String, Dictionary<String, AnyObject>> {
+                            for (_, ratingEntry) in raterDict {
+                                if let id = ratingEntry["userId"] as? String {
+                                    if id == LoginVC.userId {
+                                        continue outer
+                                    }
+                                }
+                            }
+                         
+                        }
+                    
+
+                        for post in self.posts {
+                            if post.postId == snap.key {
+                                continue outer
+                            }
+                        }
+                        if (self.frontCardView != nil && self.currentPost.postId == snap.key) {
+                            continue outer
+                        }
+                        if (self.backCardView != nil && self.backCardView.post.postId == snap.key) {
+                            continue outer
+                        }
+                  
                         let key = snap.key
                         let post = Post(postId: key, dictionary: postDict)
                         self.posts.append(post)
-                        print(self.posts[0])
                     }
                     
                 }
             }
+            
+            print(self.posts)
+            
             
             // Display the first ChoosePersonView in front. Users can swipe to indicate
             // whether they like or dislike the person displayed.
@@ -77,7 +94,7 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
             // Display the second ChoosePersonView in back. This view controller uses
             // the MDCSwipeToChooseDelegate protocol methods to update the front and
             // back views after each user swipe.
-            if self.posts.count > 1 && self.backCardView == nil{
+            if self.posts.count > 0 && self.frontCardView != nil && self.backCardView == nil{
                 self.backCardView = self.popPostViewWithFrame(self.backCardViewFrame())!
                 self.view.insertSubview(self.backCardView, belowSubview: self.frontCardView)
             }
@@ -93,6 +110,8 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
         super.viewDidLoad()
         // Add buttons to programmatically swipe the view left or right.
         // See the `nopeFrontCardView` and `likeFrontCardView` methods.
+     
+        
         NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: #selector(ChoosePostVC.getPosts), userInfo: nil, repeats: true)
 
         getPosts()
@@ -118,23 +137,39 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
         // MDCSwipeToChooseView shows "NOPE" on swipes to the left,
         // and "LIKED" on swipes to the right.
         var rating: Dictionary<String, AnyObject>
-        
-        if(wasChosenWithDirection == MDCSwipeDirection.Left){
-            print("You noped: \(self.currentPost.question)")
-            rating = ["userId": LoginVC.userId,
-                      "gender": "male",
-                      "likedit": false]
+        if (self.currentPost.postId == "gender") {
+            if(wasChosenWithDirection == MDCSwipeDirection.Left){
+                NSUserDefaults.standardUserDefaults().setValue("female", forKey: "gender")
+                LoginVC.gender = "female"
+                
+            } else{
+                
+                NSUserDefaults.standardUserDefaults().setValue("male", forKey: "gender")
+                LoginVC.gender = "male"
+
+            }
             
-        } else{
             
-            print("You liked: \(self.currentPost.question)")
-            rating = ["userId": LoginVC.userId,
-                      "gender": "male",
-                      "likedit": true]
+        } else {
+            if(wasChosenWithDirection == MDCSwipeDirection.Left){
+                print("You noped: \(self.currentPost.question)")
+                rating = ["userId": LoginVC.userId,
+                          "gender": LoginVC.gender,
+                          "likedit": false]
+                
+            } else{
+                
+                print("You liked: \(self.currentPost.question)")
+                rating = ["userId": LoginVC.userId,
+                          "gender": LoginVC.gender,
+                          "likedit": true]
+            }
+            
+            DataService.ds.REF_POSTS.child(self.currentPost.postId).child("ratings").childByAutoId().setValue(rating)
+            DataService.ds.REF_POSTS.child(self.currentPost.postId).child("numRatings").setValue(self.currentPost.ratings + 1)
         }
         
-        DataService.ds.REF_POSTS.child(self.currentPost.postId).child("ratings").childByAutoId().setValue(rating)
-
+      
         // MDCSwipeToChooseView removes the view from the view hierarchy
         // after it is swiped (this behavior can be customized via the
         // MDCSwipeOptions class). Since the front card view is gone, we
@@ -209,11 +244,17 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
     }
 
     @IBAction func likeBtnPressed(sender: AnyObject) {
-        likeFrontCardView()
+        if (self.frontCardView != nil) {
+            likeFrontCardView()
+        }
+        
     }
     
     @IBAction func dislikeBtnPressed(sender: AnyObject) {
-        nopeFrontCardView()
+        if (self.frontCardView != nil) {
+            nopeFrontCardView()
+        }
+        
     }
 
 }

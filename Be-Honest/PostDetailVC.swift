@@ -54,7 +54,7 @@ class PostDetailVC: UIViewController {
         
         var img: UIImage?
         if let imagePath = post.imagePath {
-            img = SecondViewController.imageCache.objectForKey(imagePath) as? UIImage
+            img = PostListVC.imageCache.objectForKey(imagePath) as? UIImage
             self.postImg.progressIndicatorView.reveal()
 
         }
@@ -69,7 +69,7 @@ class PostDetailVC: UIViewController {
                     let img = UIImage(data: data!)
                     self.postImg.image = img
                     self.postImg.progressIndicatorView.reveal()
-                    SecondViewController.imageCache.setObject(img!, forKey: self.post.imagePath!)
+                    PostListVC.imageCache.setObject(img!, forKey: self.post.imagePath!)
                 }
             }
             

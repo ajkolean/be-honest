@@ -8,6 +8,6 @@ target 'Be-Honest' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
-  pod 'GoogleSignIn'
+  pod 'Alamofire'
   pod "MDCSwipeToChoose"
 end

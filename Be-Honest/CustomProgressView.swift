@@ -12,6 +12,7 @@ class CustomProgressView: UIProgressView {
 
     override func awakeFromNib() {
         self.layer.cornerRadius = 6
+        self.layer.masksToBounds = true
     }
 
 }

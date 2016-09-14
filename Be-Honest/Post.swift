@@ -31,12 +31,14 @@ import Foundation
         
         var _postId: String!
         var _imagePath: String?
-        var _image: UIImage!
+        var _image: UIImage = UIImage(named: "defaultavatar")!
         var _question: String!
-        var _ratings: Int!
-        var _likes: Int!
-        var _maleLikes: Int!
-        var _femaleLikes: Int!
+        var _ratings: Int = 0
+        var _likes: Int = 0
+        var _maleLikes: Int = 0
+        var _femaleLikes: Int = 0
+        var _femaleRatings: Int = 0
+        var _maleRatings: Int = 0
         
         var postId: String {
             return _postId
@@ -56,7 +58,7 @@ import Foundation
         }
         
         var ratings: Int {
-            return _ratings!
+            return _ratings
         }
         
         
@@ -72,29 +74,32 @@ import Foundation
         }
         
         var maleApprovalPercentage: Float {
-            if _maleLikes == 0 {
+            if _maleRatings == 0 {
                 return 0
-            } else if _femaleLikes == 0 {
-                return 1.0
             } else {
-                return Float(_maleLikes) / Float(_femaleLikes + _maleLikes)
+                return Float(_maleLikes) / Float(_maleRatings)
             }
         }
         
         var femaleApprovalPercentage: Float {
-            if _femaleLikes == 0 {
+            if _femaleRatings == 0 {
                 return 0
-            } else if _maleLikes == 0 {
-                return 1.0
             } else {
-                return Float(_femaleLikes) / Float(_femaleLikes + _maleLikes)
+                return Float(_femaleLikes) / Float(_femaleRatings)
             }
         }
+        
+        init(postId: String, question: String, imageName: String) {
+            super.init()
+            _postId = postId
+            _question = question
+            _image = UIImage(named: "gender-signs")!
+        }
+        
         
         init(postId: String, dictionary: Dictionary<String, AnyObject>) {
             super.init()
             _postId = postId
-            _image = UIImage(named: "defaultavatar")
             _question = dictionary["question"] as? String
             
             if let imgPath = dictionary["imagePath"] as? String {
@@ -106,28 +111,39 @@ import Foundation
             
             
             if let ratings = dictionary["ratings"] as? Dictionary< String, Dictionary<String, AnyObject>> {
+                print("start of ratings")
                 print(ratings)
-                _likes = 0
-                _maleLikes = 0
-                _femaleLikes = 0
+                
+                
+              
                 for (_, r) in ratings {
                     if let liked = r["likedit"] as? Bool {
 
                         if (liked) {
-                            _likes! += 1
+                            _likes += 1
+                            if let gender = r["gender"] as? String {
+                                if gender == "male" {
+                                    _maleLikes += 1
+                                } else {
+                                    _femaleLikes += 1
+                                }
+                            }
 
                         }
-                    }
-                    if let gender = r["gender"] as? String {
-                        if gender == "male" {
-                            _maleLikes! += 1
-                        } else {
-                            _femaleLikes! += 1
+                        if let gender = r["gender"] as? String {
+                            if gender == "male" {
+                                _maleRatings += 1
+                            } else {
+                                _femaleRatings += 1
+                            }
                         }
                     }
+                   
                 }
                 print(ratings.count)
-                _ratings = ratings.count
+                if ratings.count >= 0 {
+                    _ratings = ratings.count
+                }
             }
             
         

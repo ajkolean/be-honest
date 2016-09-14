@@ -16,7 +16,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var progressBar: CustomProgressView!
     
     var post: Post!
-    var request: FIRStorageReference?
+    var downloadTask: FIRStorageDownloadTask?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +25,7 @@ class PostCell: UITableViewCell {
     }
     
     override func drawRect(rect: CGRect) {
-        postImg.layer.cornerRadius = 15.0
+        postImg.layer.cornerRadius = BORDER_RADIUS
         postImg.clipsToBounds = true
     }
     
@@ -41,21 +41,19 @@ class PostCell: UITableViewCell {
             if img != nil {
                 self.postImg.image = img
             } else {
-                request = DataService.ds.REF_STORAGE.reference().child(post.imagePath!)
-                let status = request!.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
+                let request = DataService.ds.REF_STORAGE.reference().child(post.imagePath!)
+                downloadTask = request.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
                     if (error != nil) {
                         print(error)
                     } else {
                         let img = UIImage(data: data!)
                         self.postImg.image = img
                         self.postImg.progressIndicatorView.reveal()
-                        SecondViewController.imageCache.setObject(img!, forKey: post.imagePath!)
+                        PostListVC.imageCache.setObject(img!, forKey: post.imagePath!)
                     }
                 }
                 
-                
-                
-                status.observeStatus(.Progress) { snapshot in
+                downloadTask!.observeStatus(.Progress) { snapshot in
                     // Upload reported progress
                     if let progress = snapshot.progress {
                         print("this is progress \(CGFloat(progress.completedUnitCount) / CGFloat(progress.totalUnitCount))")
