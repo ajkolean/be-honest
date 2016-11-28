@@ -13,10 +13,10 @@ import FirebaseStorage
 
 class DataService {
     static let ds = DataService()
-    private var _REF_BASE = FIRDatabase.database().reference()
-    private var _REF_POSTS = FIRDatabase.database().reference().child("posts")
-    private var _REF_USERS = FIRDatabase.database().reference().child("users")
-    private var _REF_STORAGE = FIRStorage.storage()
+    fileprivate var _REF_BASE = FIRDatabase.database().reference()
+    fileprivate var _REF_POSTS = FIRDatabase.database().reference().child("posts")
+    fileprivate var _REF_USERS = FIRDatabase.database().reference().child("users")
+    fileprivate var _REF_STORAGE = FIRStorage.storage()
 
     
     
@@ -39,7 +39,7 @@ class DataService {
     }
     
     
-    func createFirebaseUser(uid: String, user: Dictionary<String, String>) {
+    func createFirebaseUser(_ uid: String, user: Dictionary<String, String>) {
         REF_USERS.child(uid).setValue(user)
         
     }

@@ -10,7 +10,7 @@
 
     import UIKit
     
-    class CircularLoaderView: UIView {
+    class CircularLoaderView: UIView, CAAnimationDelegate {
         
         let circlePathLayer = CAShapeLayer()
         let circleRadius: CGFloat = 20.0
@@ -43,7 +43,7 @@
         
      
         
-        override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+        func animationDidStop(_ anim: CAAnimation!, finished flag: Bool) {
             superview?.layer.mask = nil
         }
         
@@ -51,46 +51,46 @@
             progress = 0
             circlePathLayer.frame = bounds
             circlePathLayer.lineWidth = 2
-            circlePathLayer.fillColor = UIColor.clearColor().CGColor
-            circlePathLayer.strokeColor = UIColor.purpleColor().CGColor
+            circlePathLayer.fillColor = UIColor.clear.cgColor
+            circlePathLayer.strokeColor = UIColor.purple.cgColor
             layer.addSublayer(circlePathLayer)
-            backgroundColor = UIColor.whiteColor()
+            backgroundColor = UIColor.white
         }
         
         func circleFrame() -> CGRect {
             var circleFrame = CGRect(x: 0, y: 0, width: 2*circleRadius, height: 2*circleRadius)
-            circleFrame.origin.x = CGRectGetMidX(circlePathLayer.bounds) - CGRectGetMidX(circleFrame)
-            circleFrame.origin.y = CGRectGetMidY(circlePathLayer.bounds) - CGRectGetMidY(circleFrame)
+            circleFrame.origin.x = circlePathLayer.bounds.midX - circleFrame.midX
+            circleFrame.origin.y = circlePathLayer.bounds.midY - circleFrame.midY
             return circleFrame
         }
         
         func circlePath() -> UIBezierPath {
-            return UIBezierPath(ovalInRect: circleFrame())
+            return UIBezierPath(ovalIn: circleFrame())
         }
         
         override func layoutSubviews() {
             super.layoutSubviews()
             circlePathLayer.frame = bounds
-            circlePathLayer.path = circlePath().CGPath
+            circlePathLayer.path = circlePath().cgPath
         }
         
         func reveal() {
             
             // 1
-            backgroundColor = UIColor.clearColor()
+            backgroundColor = UIColor.clear
             progress = 1
             // 2
-            circlePathLayer.removeAnimationForKey("strokeEnd")
+            circlePathLayer.removeAnimation(forKey: "strokeEnd")
             // 3
             circlePathLayer.removeFromSuperlayer()
             superview?.layer.mask = circlePathLayer
             
             // 1
-            let center = CGPoint(x: CGRectGetMidX(bounds), y: CGRectGetMidY(bounds))
+            let center = CGPoint(x: bounds.midX, y: bounds.midY)
             let finalRadius = sqrt((center.x*center.x) + (center.y*center.y))
             let radiusInset = finalRadius - circleRadius
-            let outerRect = CGRectInset(circleFrame(), -radiusInset, -radiusInset)
-            let toPath = UIBezierPath(ovalInRect: outerRect).CGPath
+            let outerRect = circleFrame().insetBy(dx: -radiusInset, dy: -radiusInset)
+            let toPath = UIBezierPath(ovalIn: outerRect).cgPath
             
             // 2
             let fromPath = circlePathLayer.path
@@ -117,7 +117,7 @@
             groupAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
             groupAnimation.animations = [pathAnimation, lineWidthAnimation]
             groupAnimation.delegate = self
-            circlePathLayer.addAnimation(groupAnimation, forKey: "strokeWidth")
+            circlePathLayer.add(groupAnimation, forKey: "strokeWidth")
         }
         
     }

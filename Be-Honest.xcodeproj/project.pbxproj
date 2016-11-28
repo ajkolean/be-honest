@@ -7,41 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		84480BA91D7FB467002278BE /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84480BA81D7FB467002278BE /* CustomImageView.swift */; };
-		84480BAB1D7FB48C002278BE /* CircularLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84480BAA1D7FB48C002278BE /* CircularLoaderView.swift */; };
-		844923DF1D84CF5F00938C22 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844923DE1D84CF5F00938C22 /* Extensions.swift */; };
-		84540DD61D613E4A00EED5BC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84540DD51D613E4A00EED5BC /* Constants.swift */; };
-		84816A501D6A855E00BACFC6 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84816A4F1D6A855E00BACFC6 /* MaterialView.swift */; };
 		848CBAD11D6108E8003CFA55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CBAD01D6108E8003CFA55 /* AppDelegate.swift */; };
-		848CBAD51D6108E8003CFA55 /* PostListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CBAD41D6108E8003CFA55 /* PostListVC.swift */; };
 		848CBAD81D6108E8003CFA55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAD61D6108E8003CFA55 /* Main.storyboard */; };
 		848CBADA1D6108E8003CFA55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848CBAD91D6108E8003CFA55 /* Assets.xcassets */; };
 		848CBADD1D6108E8003CFA55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848CBADB1D6108E8003CFA55 /* LaunchScreen.storyboard */; };
-		848CBAE51D610932003CFA55 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848CBAE41D610932003CFA55 /* LoginVC.swift */; };
-		848CBB071D6126AA003CFA55 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBB031D6126AA003CFA55 /* Roboto-Bold.ttf */; };
-		848CBB081D6126AA003CFA55 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBB041D6126AA003CFA55 /* Roboto-Italic.ttf */; };
-		848CBB091D6126AA003CFA55 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBB051D6126AA003CFA55 /* Roboto-Light.ttf */; };
-		848CBB0A1D6126AA003CFA55 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 848CBB061D6126AA003CFA55 /* Roboto-Medium.ttf */; };
 		848CBB101D61311F003CFA55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 848CBB0F1D61311F003CFA55 /* GoogleService-Info.plist */; };
-		848CBB151D613305003CFA55 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CBB121D613305003CFA55 /* Bolts.framework */; };
-		848CBB161D613305003CFA55 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CBB131D613305003CFA55 /* FBSDKCoreKit.framework */; };
-		848CBB171D613305003CFA55 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 848CBB141D613305003CFA55 /* FBSDKLoginKit.framework */; };
-		84A5259E1D62922C00D38071 /* ostrich-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84A525991D62922C00D38071 /* ostrich-regular.ttf */; };
-		84A5259F1D62922C00D38071 /* OstrichSans-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84A5259A1D62922C00D38071 /* OstrichSans-Black.otf */; };
-		84A525A01D62922C00D38071 /* OstrichSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84A5259B1D62922C00D38071 /* OstrichSans-Bold.otf */; };
-		84A525A11D62922C00D38071 /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84A5259C1D62922C00D38071 /* OstrichSans-Heavy.otf */; };
-		84A525A21D62922C00D38071 /* OstrichSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84A5259D1D62922C00D38071 /* OstrichSans-Light.otf */; };
-		84A525A41D6292F700D38071 /* LoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525A31D6292F700D38071 /* LoginButtonView.swift */; };
-		84A525A61D62A16F00D38071 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525A51D62A16F00D38071 /* Post.swift */; };
-		84A525A81D62A33E00D38071 /* ChoosePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525A71D62A33E00D38071 /* ChoosePostVC.swift */; };
-		84A525AC1D62A4FA00D38071 /* ChoosePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525AB1D62A4FA00D38071 /* ChoosePostView.swift */; };
-		84A525AE1D62A5F700D38071 /* ImageLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525AD1D62A5F700D38071 /* ImageLabelView.swift */; };
-		84A525B01D62BC6E00D38071 /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525AF1D62BC6E00D38071 /* CustomProgressView.swift */; };
-		84A525B21D62C53E00D38071 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525B11D62C53E00D38071 /* PostCell.swift */; };
-		84A525B41D62CD5100D38071 /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525B31D62CD5100D38071 /* AddPostVC.swift */; };
-		84A525B61D6417EE00D38071 /* PostDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A525B51D6417EE00D38071 /* PostDetailVC.swift */; };
-		84D268001D6CF18D00A0096B /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D267FF1D6CF18D00A0096B /* MaterialTextField.swift */; };
-		84D268031D6CFCE500A0096B /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D268021D6CFCE500A0096B /* DataService.swift */; };
+		84F7B2251DECB03700D74DBB /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B2201DECB03700D74DBB /* AddPostVC.swift */; };
+		84F7B2261DECB03700D74DBB /* ChoosePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B2211DECB03700D74DBB /* ChoosePostVC.swift */; };
+		84F7B2271DECB03700D74DBB /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B2221DECB03700D74DBB /* LoginVC.swift */; };
+		84F7B2281DECB03700D74DBB /* PostDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B2231DECB03700D74DBB /* PostDetailVC.swift */; };
+		84F7B2291DECB03700D74DBB /* PostListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B2241DECB03700D74DBB /* PostListVC.swift */; };
+		84F7B2341DECB0E500D74DBB /* ChoosePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B22B1DECB0E500D74DBB /* ChoosePostView.swift */; };
+		84F7B2351DECB0E500D74DBB /* CircularLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B22C1DECB0E500D74DBB /* CircularLoaderView.swift */; };
+		84F7B2361DECB0E500D74DBB /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B22D1DECB0E500D74DBB /* CustomImageView.swift */; };
+		84F7B2371DECB0E500D74DBB /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B22E1DECB0E500D74DBB /* CustomProgressView.swift */; };
+		84F7B2381DECB0E500D74DBB /* ImageLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B22F1DECB0E500D74DBB /* ImageLabelView.swift */; };
+		84F7B2391DECB0E500D74DBB /* LoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B2301DECB0E500D74DBB /* LoginButtonView.swift */; };
+		84F7B23A1DECB0E500D74DBB /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B2311DECB0E500D74DBB /* MaterialTextField.swift */; };
+		84F7B23B1DECB0E500D74DBB /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B2321DECB0E500D74DBB /* MaterialView.swift */; };
+		84F7B23C1DECB0E500D74DBB /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B2331DECB0E500D74DBB /* PostCell.swift */; };
+		84F7B23F1DECB0F400D74DBB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B23E1DECB0F400D74DBB /* Post.swift */; };
+		84F7B2421DECB10000D74DBB /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B2411DECB10000D74DBB /* DataService.swift */; };
+		84F7B2461DECB10A00D74DBB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B2441DECB10A00D74DBB /* Constants.swift */; };
+		84F7B2471DECB10A00D74DBB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7B2451DECB10A00D74DBB /* Extensions.swift */; };
+		84F7B24C1DECB11500D74DBB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F7B2491DECB11500D74DBB /* Bolts.framework */; };
+		84F7B24D1DECB11500D74DBB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F7B24A1DECB11500D74DBB /* FBSDKCoreKit.framework */; };
+		84F7B24E1DECB11500D74DBB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F7B24B1DECB11500D74DBB /* FBSDKLoginKit.framework */; };
+		84F7B2591DECB12A00D74DBB /* ostrich-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84F7B2501DECB12A00D74DBB /* ostrich-regular.ttf */; };
+		84F7B25A1DECB12A00D74DBB /* OstrichSans-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84F7B2511DECB12A00D74DBB /* OstrichSans-Black.otf */; };
+		84F7B25B1DECB12A00D74DBB /* OstrichSans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84F7B2521DECB12A00D74DBB /* OstrichSans-Bold.otf */; };
+		84F7B25C1DECB12A00D74DBB /* OstrichSans-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84F7B2531DECB12A00D74DBB /* OstrichSans-Heavy.otf */; };
+		84F7B25D1DECB12A00D74DBB /* OstrichSans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 84F7B2541DECB12A00D74DBB /* OstrichSans-Light.otf */; };
+		84F7B25E1DECB12A00D74DBB /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84F7B2551DECB12A00D74DBB /* Roboto-Bold.ttf */; };
+		84F7B25F1DECB12A00D74DBB /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84F7B2561DECB12A00D74DBB /* Roboto-Italic.ttf */; };
+		84F7B2601DECB12A00D74DBB /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84F7B2571DECB12A00D74DBB /* Roboto-Light.ttf */; };
+		84F7B2611DECB12A00D74DBB /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84F7B2581DECB12A00D74DBB /* Roboto-Medium.ttf */; };
 		8501BBEEB00E3EB477C25C11 /* Pods_Be_Honest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C810E0DD67D232B82B928D /* Pods_Be_Honest.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,44 +49,45 @@
 		31C810E0DD67D232B82B928D /* Pods_Be_Honest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Be_Honest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73E6801FC66AFCAE9ECE3914 /* Pods-Be-Honest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Be-Honest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Be-Honest/Pods-Be-Honest.debug.xcconfig"; sourceTree = "<group>"; };
 		77652FDC43F959AF19A3D1B5 /* Pods-Be-Honest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Be-Honest.release.xcconfig"; path = "Pods/Target Support Files/Pods-Be-Honest/Pods-Be-Honest.release.xcconfig"; sourceTree = "<group>"; };
-		84480BA81D7FB467002278BE /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
-		84480BAA1D7FB48C002278BE /* CircularLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularLoaderView.swift; sourceTree = "<group>"; };
-		844923DE1D84CF5F00938C22 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		84540DD51D613E4A00EED5BC /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		84540DD81D6140C100EED5BC /* Be-Honest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Be-Honest-Bridging-Header.h"; sourceTree = "<group>"; };
-		84816A4F1D6A855E00BACFC6 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		848CBACD1D6108E7003CFA55 /* Be-Honest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Be-Honest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848CBAD01D6108E8003CFA55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		848CBAD41D6108E8003CFA55 /* PostListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListVC.swift; sourceTree = "<group>"; };
 		848CBAD71D6108E8003CFA55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		848CBAD91D6108E8003CFA55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		848CBADC1D6108E8003CFA55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848CBADE1D6108E8003CFA55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		848CBAE41D610932003CFA55 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		848CBB031D6126AA003CFA55 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		848CBB041D6126AA003CFA55 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
-		848CBB051D6126AA003CFA55 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
-		848CBB061D6126AA003CFA55 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		848CBB0F1D61311F003CFA55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		848CBB121D613305003CFA55 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		848CBB131D613305003CFA55 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		848CBB141D613305003CFA55 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		84A525991D62922C00D38071 /* ostrich-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ostrich-regular.ttf"; sourceTree = "<group>"; };
-		84A5259A1D62922C00D38071 /* OstrichSans-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Black.otf"; sourceTree = "<group>"; };
-		84A5259B1D62922C00D38071 /* OstrichSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Bold.otf"; sourceTree = "<group>"; };
-		84A5259C1D62922C00D38071 /* OstrichSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Heavy.otf"; sourceTree = "<group>"; };
-		84A5259D1D62922C00D38071 /* OstrichSans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Light.otf"; sourceTree = "<group>"; };
-		84A525A31D6292F700D38071 /* LoginButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
-		84A525A51D62A16F00D38071 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		84A525A71D62A33E00D38071 /* ChoosePostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePostVC.swift; sourceTree = "<group>"; };
-		84A525AB1D62A4FA00D38071 /* ChoosePostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePostView.swift; sourceTree = "<group>"; };
-		84A525AD1D62A5F700D38071 /* ImageLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLabelView.swift; sourceTree = "<group>"; };
-		84A525AF1D62BC6E00D38071 /* CustomProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
-		84A525B11D62C53E00D38071 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
-		84A525B31D62CD5100D38071 /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
-		84A525B51D6417EE00D38071 /* PostDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailVC.swift; sourceTree = "<group>"; };
-		84D267FF1D6CF18D00A0096B /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
-		84D268021D6CFCE500A0096B /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		84F7B21E1DECA79700D74DBB /* Be-Honest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Be-Honest.entitlements"; sourceTree = "<group>"; };
+		84F7B2201DECB03700D74DBB /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
+		84F7B2211DECB03700D74DBB /* ChoosePostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePostVC.swift; sourceTree = "<group>"; };
+		84F7B2221DECB03700D74DBB /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		84F7B2231DECB03700D74DBB /* PostDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailVC.swift; sourceTree = "<group>"; };
+		84F7B2241DECB03700D74DBB /* PostListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListVC.swift; sourceTree = "<group>"; };
+		84F7B22B1DECB0E500D74DBB /* ChoosePostView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoosePostView.swift; sourceTree = "<group>"; };
+		84F7B22C1DECB0E500D74DBB /* CircularLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularLoaderView.swift; sourceTree = "<group>"; };
+		84F7B22D1DECB0E500D74DBB /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		84F7B22E1DECB0E500D74DBB /* CustomProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
+		84F7B22F1DECB0E500D74DBB /* ImageLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLabelView.swift; sourceTree = "<group>"; };
+		84F7B2301DECB0E500D74DBB /* LoginButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
+		84F7B2311DECB0E500D74DBB /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		84F7B2321DECB0E500D74DBB /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		84F7B2331DECB0E500D74DBB /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		84F7B23E1DECB0F400D74DBB /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		84F7B2411DECB10000D74DBB /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		84F7B2441DECB10A00D74DBB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		84F7B2451DECB10A00D74DBB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		84F7B2491DECB11500D74DBB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		84F7B24A1DECB11500D74DBB /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		84F7B24B1DECB11500D74DBB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		84F7B2501DECB12A00D74DBB /* ostrich-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ostrich-regular.ttf"; sourceTree = "<group>"; };
+		84F7B2511DECB12A00D74DBB /* OstrichSans-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Black.otf"; sourceTree = "<group>"; };
+		84F7B2521DECB12A00D74DBB /* OstrichSans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Bold.otf"; sourceTree = "<group>"; };
+		84F7B2531DECB12A00D74DBB /* OstrichSans-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Heavy.otf"; sourceTree = "<group>"; };
+		84F7B2541DECB12A00D74DBB /* OstrichSans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OstrichSans-Light.otf"; sourceTree = "<group>"; };
+		84F7B2551DECB12A00D74DBB /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		84F7B2561DECB12A00D74DBB /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		84F7B2571DECB12A00D74DBB /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		84F7B2581DECB12A00D74DBB /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +96,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8501BBEEB00E3EB477C25C11 /* Pods_Be_Honest.framework in Frameworks */,
-				848CBB161D613305003CFA55 /* FBSDKCoreKit.framework in Frameworks */,
-				848CBB171D613305003CFA55 /* FBSDKLoginKit.framework in Frameworks */,
-				848CBB151D613305003CFA55 /* Bolts.framework in Frameworks */,
+				84F7B24D1DECB11500D74DBB /* FBSDKCoreKit.framework in Frameworks */,
+				84F7B24E1DECB11500D74DBB /* FBSDKLoginKit.framework in Frameworks */,
+				84F7B24C1DECB11500D74DBB /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,15 +122,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		84540DD41D613E3B00EED5BC /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				84540DD51D613E4A00EED5BC /* Constants.swift */,
-				844923DE1D84CF5F00938C22 /* Extensions.swift */,
-			);
-			name = Utils;
-			sourceTree = "<group>";
-		};
 		848CBAC41D6108E7003CFA55 = {
 			isa = PBXGroup;
 			children = (
@@ -151,13 +143,14 @@
 		848CBACF1D6108E8003CFA55 /* Be-Honest */ = {
 			isa = PBXGroup;
 			children = (
-				84D268011D6CFCD400A0096B /* Services */,
-				84540DD41D613E3B00EED5BC /* Utils */,
-				848CBB111D6132E0003CFA55 /* Frameworks */,
-				848CBAE91D610A17003CFA55 /* Model */,
-				848CBAE81D610A0F003CFA55 /* View */,
-				848CBAE71D610A08003CFA55 /* Controller */,
-				848CBAE61D610A01003CFA55 /* Resources */,
+				84F7B21E1DECA79700D74DBB /* Be-Honest.entitlements */,
+				84F7B2401DECB10000D74DBB /* Services */,
+				84F7B2431DECB10A00D74DBB /* Utils */,
+				84F7B2481DECB11500D74DBB /* Frameworks */,
+				84F7B21F1DECB03700D74DBB /* Controller */,
+				84F7B23D1DECB0F400D74DBB /* Model */,
+				84F7B22A1DECB0E500D74DBB /* View */,
+				84F7B24F1DECB12A00D74DBB /* Resources */,
 				848CBAD01D6108E8003CFA55 /* AppDelegate.swift */,
 				848CBAD61D6108E8003CFA55 /* Main.storyboard */,
 				848CBAD91D6108E8003CFA55 /* Assets.xcassets */,
@@ -169,74 +162,83 @@
 			path = "Be-Honest";
 			sourceTree = "<group>";
 		};
-		848CBAE61D610A01003CFA55 /* Resources */ = {
+		84F7B21F1DECB03700D74DBB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				84A525991D62922C00D38071 /* ostrich-regular.ttf */,
-				84A5259A1D62922C00D38071 /* OstrichSans-Black.otf */,
-				84A5259B1D62922C00D38071 /* OstrichSans-Bold.otf */,
-				84A5259C1D62922C00D38071 /* OstrichSans-Heavy.otf */,
-				84A5259D1D62922C00D38071 /* OstrichSans-Light.otf */,
-				848CBB031D6126AA003CFA55 /* Roboto-Bold.ttf */,
-				848CBB041D6126AA003CFA55 /* Roboto-Italic.ttf */,
-				848CBB051D6126AA003CFA55 /* Roboto-Light.ttf */,
-				848CBB061D6126AA003CFA55 /* Roboto-Medium.ttf */,
+				84F7B2201DECB03700D74DBB /* AddPostVC.swift */,
+				84F7B2211DECB03700D74DBB /* ChoosePostVC.swift */,
+				84F7B2221DECB03700D74DBB /* LoginVC.swift */,
+				84F7B2231DECB03700D74DBB /* PostDetailVC.swift */,
+				84F7B2241DECB03700D74DBB /* PostListVC.swift */,
 			);
-			name = Resources;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		848CBAE71D610A08003CFA55 /* Controller */ = {
+		84F7B22A1DECB0E500D74DBB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				848CBAD41D6108E8003CFA55 /* PostListVC.swift */,
-				848CBAE41D610932003CFA55 /* LoginVC.swift */,
-				84A525A71D62A33E00D38071 /* ChoosePostVC.swift */,
-				84A525B31D62CD5100D38071 /* AddPostVC.swift */,
-				84A525B51D6417EE00D38071 /* PostDetailVC.swift */,
+				84F7B22B1DECB0E500D74DBB /* ChoosePostView.swift */,
+				84F7B22C1DECB0E500D74DBB /* CircularLoaderView.swift */,
+				84F7B22D1DECB0E500D74DBB /* CustomImageView.swift */,
+				84F7B22E1DECB0E500D74DBB /* CustomProgressView.swift */,
+				84F7B22F1DECB0E500D74DBB /* ImageLabelView.swift */,
+				84F7B2301DECB0E500D74DBB /* LoginButtonView.swift */,
+				84F7B2311DECB0E500D74DBB /* MaterialTextField.swift */,
+				84F7B2321DECB0E500D74DBB /* MaterialView.swift */,
+				84F7B2331DECB0E500D74DBB /* PostCell.swift */,
 			);
-			name = Controller;
+			path = View;
 			sourceTree = "<group>";
 		};
-		848CBAE81D610A0F003CFA55 /* View */ = {
+		84F7B23D1DECB0F400D74DBB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				84A525A31D6292F700D38071 /* LoginButtonView.swift */,
-				84A525AB1D62A4FA00D38071 /* ChoosePostView.swift */,
-				84A525B11D62C53E00D38071 /* PostCell.swift */,
-				84A525AD1D62A5F700D38071 /* ImageLabelView.swift */,
-				84A525AF1D62BC6E00D38071 /* CustomProgressView.swift */,
-				84816A4F1D6A855E00BACFC6 /* MaterialView.swift */,
-				84D267FF1D6CF18D00A0096B /* MaterialTextField.swift */,
-				84480BA81D7FB467002278BE /* CustomImageView.swift */,
-				84480BAA1D7FB48C002278BE /* CircularLoaderView.swift */,
+				84F7B23E1DECB0F400D74DBB /* Post.swift */,
 			);
-			name = View;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		848CBAE91D610A17003CFA55 /* Model */ = {
+		84F7B2401DECB10000D74DBB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				84A525A51D62A16F00D38071 /* Post.swift */,
+				84F7B2411DECB10000D74DBB /* DataService.swift */,
 			);
-			name = Model;
+			path = Services;
 			sourceTree = "<group>";
 		};
-		848CBB111D6132E0003CFA55 /* Frameworks */ = {
+		84F7B2431DECB10A00D74DBB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				848CBB121D613305003CFA55 /* Bolts.framework */,
-				848CBB131D613305003CFA55 /* FBSDKCoreKit.framework */,
-				848CBB141D613305003CFA55 /* FBSDKLoginKit.framework */,
+				84F7B2441DECB10A00D74DBB /* Constants.swift */,
+				84F7B2451DECB10A00D74DBB /* Extensions.swift */,
 			);
-			name = Frameworks;
+			path = Utils;
 			sourceTree = "<group>";
 		};
-		84D268011D6CFCD400A0096B /* Services */ = {
+		84F7B2481DECB11500D74DBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				84D268021D6CFCE500A0096B /* DataService.swift */,
+				84F7B2491DECB11500D74DBB /* Bolts.framework */,
+				84F7B24A1DECB11500D74DBB /* FBSDKCoreKit.framework */,
+				84F7B24B1DECB11500D74DBB /* FBSDKLoginKit.framework */,
 			);
-			name = Services;
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		84F7B24F1DECB12A00D74DBB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84F7B2501DECB12A00D74DBB /* ostrich-regular.ttf */,
+				84F7B2511DECB12A00D74DBB /* OstrichSans-Black.otf */,
+				84F7B2521DECB12A00D74DBB /* OstrichSans-Bold.otf */,
+				84F7B2531DECB12A00D74DBB /* OstrichSans-Heavy.otf */,
+				84F7B2541DECB12A00D74DBB /* OstrichSans-Light.otf */,
+				84F7B2551DECB12A00D74DBB /* Roboto-Bold.ttf */,
+				84F7B2561DECB12A00D74DBB /* Roboto-Italic.ttf */,
+				84F7B2571DECB12A00D74DBB /* Roboto-Light.ttf */,
+				84F7B2581DECB12A00D74DBB /* Roboto-Medium.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,12 +271,18 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = ajkolean;
 				TargetAttributes = {
 					848CBACC1D6108E7003CFA55 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = VW7JTDHU45;
+						LastSwiftMigration = 0810;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -301,19 +309,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				848CBB0A1D6126AA003CFA55 /* Roboto-Medium.ttf in Resources */,
-				84A525A01D62922C00D38071 /* OstrichSans-Bold.otf in Resources */,
+				84F7B2611DECB12A00D74DBB /* Roboto-Medium.ttf in Resources */,
+				84F7B2591DECB12A00D74DBB /* ostrich-regular.ttf in Resources */,
 				848CBADD1D6108E8003CFA55 /* LaunchScreen.storyboard in Resources */,
-				84A525A11D62922C00D38071 /* OstrichSans-Heavy.otf in Resources */,
-				84A525A21D62922C00D38071 /* OstrichSans-Light.otf in Resources */,
-				84A5259E1D62922C00D38071 /* ostrich-regular.ttf in Resources */,
-				848CBB071D6126AA003CFA55 /* Roboto-Bold.ttf in Resources */,
-				848CBB091D6126AA003CFA55 /* Roboto-Light.ttf in Resources */,
-				84A5259F1D62922C00D38071 /* OstrichSans-Black.otf in Resources */,
+				84F7B2601DECB12A00D74DBB /* Roboto-Light.ttf in Resources */,
+				84F7B25E1DECB12A00D74DBB /* Roboto-Bold.ttf in Resources */,
 				848CBADA1D6108E8003CFA55 /* Assets.xcassets in Resources */,
+				84F7B25D1DECB12A00D74DBB /* OstrichSans-Light.otf in Resources */,
+				84F7B25A1DECB12A00D74DBB /* OstrichSans-Black.otf in Resources */,
+				84F7B25B1DECB12A00D74DBB /* OstrichSans-Bold.otf in Resources */,
 				848CBAD81D6108E8003CFA55 /* Main.storyboard in Resources */,
 				848CBB101D61311F003CFA55 /* GoogleService-Info.plist in Resources */,
-				848CBB081D6126AA003CFA55 /* Roboto-Italic.ttf in Resources */,
+				84F7B25F1DECB12A00D74DBB /* Roboto-Italic.ttf in Resources */,
+				84F7B25C1DECB12A00D74DBB /* OstrichSans-Heavy.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,7 +340,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8BCA7E5358C4D7B462EA25D3 /* [CP] Copy Pods Resources */ = {
@@ -372,25 +380,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				848CBAD51D6108E8003CFA55 /* PostListVC.swift in Sources */,
-				84A525AE1D62A5F700D38071 /* ImageLabelView.swift in Sources */,
+				84F7B2391DECB0E500D74DBB /* LoginButtonView.swift in Sources */,
+				84F7B2271DECB03700D74DBB /* LoginVC.swift in Sources */,
+				84F7B2341DECB0E500D74DBB /* ChoosePostView.swift in Sources */,
+				84F7B23B1DECB0E500D74DBB /* MaterialView.swift in Sources */,
+				84F7B2351DECB0E500D74DBB /* CircularLoaderView.swift in Sources */,
+				84F7B2251DECB03700D74DBB /* AddPostVC.swift in Sources */,
+				84F7B2421DECB10000D74DBB /* DataService.swift in Sources */,
+				84F7B2471DECB10A00D74DBB /* Extensions.swift in Sources */,
 				848CBAD11D6108E8003CFA55 /* AppDelegate.swift in Sources */,
-				84A525B01D62BC6E00D38071 /* CustomProgressView.swift in Sources */,
-				84A525B41D62CD5100D38071 /* AddPostVC.swift in Sources */,
-				84816A501D6A855E00BACFC6 /* MaterialView.swift in Sources */,
-				848CBAE51D610932003CFA55 /* LoginVC.swift in Sources */,
-				844923DF1D84CF5F00938C22 /* Extensions.swift in Sources */,
-				84D268031D6CFCE500A0096B /* DataService.swift in Sources */,
-				84480BAB1D7FB48C002278BE /* CircularLoaderView.swift in Sources */,
-				84540DD61D613E4A00EED5BC /* Constants.swift in Sources */,
-				84A525A81D62A33E00D38071 /* ChoosePostVC.swift in Sources */,
-				84A525A61D62A16F00D38071 /* Post.swift in Sources */,
-				84A525A41D6292F700D38071 /* LoginButtonView.swift in Sources */,
-				84A525B61D6417EE00D38071 /* PostDetailVC.swift in Sources */,
-				84D268001D6CF18D00A0096B /* MaterialTextField.swift in Sources */,
-				84A525AC1D62A4FA00D38071 /* ChoosePostView.swift in Sources */,
-				84480BA91D7FB467002278BE /* CustomImageView.swift in Sources */,
-				84A525B21D62C53E00D38071 /* PostCell.swift in Sources */,
+				84F7B2261DECB03700D74DBB /* ChoosePostVC.swift in Sources */,
+				84F7B2381DECB0E500D74DBB /* ImageLabelView.swift in Sources */,
+				84F7B23A1DECB0E500D74DBB /* MaterialTextField.swift in Sources */,
+				84F7B23C1DECB0E500D74DBB /* PostCell.swift in Sources */,
+				84F7B2281DECB03700D74DBB /* PostDetailVC.swift in Sources */,
+				84F7B2291DECB03700D74DBB /* PostListVC.swift in Sources */,
+				84F7B23F1DECB0F400D74DBB /* Post.swift in Sources */,
+				84F7B2371DECB0E500D74DBB /* CustomProgressView.swift in Sources */,
+				84F7B2361DECB0E500D74DBB /* CustomImageView.swift in Sources */,
+				84F7B2461DECB10A00D74DBB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,8 +438,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -476,8 +486,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -496,6 +508,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -507,11 +520,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Be-Honest/Be-Honest.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Be-Honest",
+					"$(PROJECT_DIR)/Be-Honest/Frameworks",
 				);
 				INFOPLIST_FILE = "Be-Honest/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -521,6 +536,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Be-Honest/Be-Honest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -531,11 +547,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Be-Honest/Be-Honest.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Be-Honest",
+					"$(PROJECT_DIR)/Be-Honest/Frameworks",
 				);
 				INFOPLIST_FILE = "Be-Honest/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -544,6 +562,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Be-Honest/Be-Honest-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

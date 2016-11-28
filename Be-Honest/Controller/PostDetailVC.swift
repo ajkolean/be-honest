@@ -54,7 +54,7 @@ class PostDetailVC: UIViewController {
         
         var img: UIImage?
         if let imagePath = post.imagePath {
-            img = PostListVC.imageCache.objectForKey(imagePath) as? UIImage
+            img = PostListVC.imageCache.object(forKey: imagePath as AnyObject) as? UIImage
             self.postImg.progressIndicatorView.reveal()
 
         }
@@ -62,18 +62,18 @@ class PostDetailVC: UIViewController {
             self.postImg.image = img
         } else {
             let request = DataService.ds.REF_STORAGE.reference().child(post.imagePath!)
-            let downloadTask = request.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
+            let downloadTask = request.data(withMaxSize: 1 * 1024 * 1024) { (data, error) -> Void in
                 if (error != nil) {
                     print(error)
                 } else {
                     let img = UIImage(data: data!)
                     self.postImg.image = img
                     self.postImg.progressIndicatorView.reveal()
-                    PostListVC.imageCache.setObject(img!, forKey: self.post.imagePath!)
+                    PostListVC.imageCache.setObject(img!, forKey: self.post.imagePath! as AnyObject)
                 }
             }
             
-            downloadTask.observeStatus(.Progress) { snapshot in
+            downloadTask.observe(.progress) { snapshot in
                 // Upload reported progress
                 if let progress = snapshot.progress {
                     print("this is progress \(CGFloat(progress.completedUnitCount) / CGFloat(progress.totalUnitCount))")
@@ -93,8 +93,8 @@ class PostDetailVC: UIViewController {
   
 
   
-    @IBAction func goBackBtnPressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func goBackBtnPressed(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
 
     }
 

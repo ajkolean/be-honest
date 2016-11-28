@@ -14,15 +14,15 @@ class PostListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     var posts = [Post]()
-    static var imageCache = NSCache()
+    static var imageCache = NSCache<AnyObject, AnyObject>()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        let userId = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String
-        DataService.ds.REF_POSTS.queryOrderedByChild("userId").queryEqualToValue(userId).observeEventType(.Value, withBlock: { snapshot in
+        let userId = UserDefaults.standard.value(forKey: KEY_UID) as? String
+        DataService.ds.REF_POSTS.queryOrdered(byChild: "userId").queryEqual(toValue: userId).observe(.value, with: { snapshot in
             
             self.posts = []
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
@@ -44,17 +44,17 @@ class PostListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var img: UIImage?
         let post = posts[indexPath.row]
         if let imagePath = post.imagePath {
-            img = PostListVC.imageCache.objectForKey(imagePath) as? UIImage
+            img = PostListVC.imageCache.object(forKey: imagePath as AnyObject) as? UIImage
         }
-        if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             if let dlTask = cell.downloadTask {
                 dlTask.cancel()
             }
@@ -65,24 +65,24 @@ class PostListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 117.0
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = posts[indexPath.row]
-        performSegueWithIdentifier("PostDetailVC", sender: post)
+        performSegue(withIdentifier: "PostDetailVC", sender: post)
         
     }
     
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "PostDetailVC" {
-            if let detailsVC = segue.destinationViewController as? PostDetailVC {
+            if let detailsVC = segue.destination as? PostDetailVC {
                 if let post = sender as? Post {
                     detailsVC.post = post
                 }

@@ -25,7 +25,7 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         // Here you can init your properties
@@ -40,7 +40,7 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
             return;
         }
         
-        DataService.ds.REF_POSTS.queryOrderedByChild("numRatings").queryStartingAtValue(true).queryLimitedToFirst(10).observeSingleEventOfType(.Value, withBlock: { snapshot in
+        DataService.ds.REF_POSTS.queryOrdered(byChild: "numRatings").queryStarting(atValue: true).queryLimited(toFirst: 10).observeSingleEvent(of: .value, with: { snapshot in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 outer: for snap in snapshots {
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
@@ -112,7 +112,7 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
         // See the `nopeFrontCardView` and `likeFrontCardView` methods.
      
         
-        NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: #selector(ChoosePostVC.getPosts), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(ChoosePostVC.getPosts), userInfo: nil, repeats: true)
 
         getPosts()
         
@@ -121,48 +121,48 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
 
     }
     func suportedInterfaceOrientations() -> UIInterfaceOrientationMask{
-        return UIInterfaceOrientationMask.Portrait
+        return UIInterfaceOrientationMask.portrait
     }
     
     
     // This is called when a user didn't fully swipe left or right.
-    func viewDidCancelSwipe(view: UIView) -> Void{
+    func viewDidCancelSwipe(_ view: UIView) -> Void{
         
         print("You couldn't decide on \(self.currentPost.question)", terminator: "");
     }
     
     // This is called then a user swipes the view fully left or right.
-    func view(view: UIView, wasChosenWithDirection: MDCSwipeDirection) -> Void{
+    func view(_ view: UIView, wasChosenWith wasChosenWithDirection: MDCSwipeDirection) -> Void{
         
         // MDCSwipeToChooseView shows "NOPE" on swipes to the left,
         // and "LIKED" on swipes to the right.
         var rating: Dictionary<String, AnyObject>
         if (self.currentPost.postId == "gender") {
-            if(wasChosenWithDirection == MDCSwipeDirection.Left){
-                NSUserDefaults.standardUserDefaults().setValue("female", forKey: "gender")
+            if(wasChosenWithDirection == MDCSwipeDirection.left){
+                UserDefaults.standard.setValue("female", forKey: "gender")
                 LoginVC.gender = "female"
                 
             } else{
                 
-                NSUserDefaults.standardUserDefaults().setValue("male", forKey: "gender")
+                UserDefaults.standard.setValue("male", forKey: "gender")
                 LoginVC.gender = "male"
 
             }
             
             
         } else {
-            if(wasChosenWithDirection == MDCSwipeDirection.Left){
+            if(wasChosenWithDirection == MDCSwipeDirection.left){
                 print("You noped: \(self.currentPost.question)")
-                rating = ["userId": LoginVC.userId,
-                          "gender": LoginVC.gender,
-                          "likedit": false]
+                rating = ["userId": LoginVC.userId as AnyObject,
+                          "gender": LoginVC.gender as AnyObject,
+                          "likedit": false as AnyObject]
                 
             } else{
                 
                 print("You liked: \(self.currentPost.question)")
-                rating = ["userId": LoginVC.userId,
-                          "gender": LoginVC.gender,
-                          "likedit": true]
+                rating = ["userId": LoginVC.userId as AnyObject,
+                          "gender": LoginVC.gender as AnyObject,
+                          "likedit": true as AnyObject]
             }
             
             DataService.ds.REF_POSTS.child(self.currentPost.postId).child("ratings").childByAutoId().setValue(rating)
@@ -184,12 +184,12 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
         if(backCardView != nil){
             self.backCardView.alpha = 0.0
             self.view.insertSubview(self.backCardView, belowSubview: self.frontCardView)
-            UIView.animateWithDuration(0.5, delay: 0.0, options: .CurveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions(), animations: {
                 self.backCardView.alpha = 1.0
                 },completion:nil)
         }
     }
-    func setMyFrontCardView(frontCardView:ChoosePostView) -> Void{
+    func setMyFrontCardView(_ frontCardView:ChoosePostView) -> Void{
         
         // Keep track of the person currently being chosen.
         // Quick and dirty, just for the purposes of this sample app.
@@ -198,7 +198,7 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
     }
     
 
-    func popPostViewWithFrame(frame:CGRect) -> ChoosePostView?{
+    func popPostViewWithFrame(_ frame:CGRect) -> ChoosePostView?{
         if(self.posts.count == 0){
             return nil;
         }
@@ -213,7 +213,7 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
         options.onPan = { state -> Void in
             if(self.backCardView != nil){
                 let frame:CGRect = self.frontCardViewFrame()
-                self.backCardView.frame = CGRectMake(frame.origin.x, frame.origin.y-(state.thresholdRatio * 10.0), CGRectGetWidth(frame), CGRectGetHeight(frame))
+                self.backCardView.frame = CGRect(x: frame.origin.x, y: frame.origin.y-((state?.thresholdRatio)! * 10.0), width: frame.width, height: frame.height)
             }
         }
         
@@ -221,7 +221,7 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
         // that person off the stack.
         
         let postView:ChoosePostView = ChoosePostView(frame: frame, post: self.posts[0], options: options)
-        self.posts.removeAtIndex(0)
+        self.posts.remove(at: 0)
         return postView
         
     }
@@ -229,28 +229,28 @@ class ChoosePostVC: UIViewController, MDCSwipeToChooseDelegate {
         let horizontalPadding:CGFloat = 20.0
         let topPadding:CGFloat = 60.0
         let bottomPadding:CGFloat = 200.0
-        return CGRectMake(horizontalPadding,topPadding,CGRectGetWidth(self.view.frame) - (horizontalPadding * 2), CGRectGetHeight(self.view.frame) - bottomPadding)
+        return CGRect(x: horizontalPadding,y: topPadding,width: self.view.frame.width - (horizontalPadding * 2), height: self.view.frame.height - bottomPadding)
     }
     func backCardViewFrame() ->CGRect{
         let frontFrame:CGRect = frontCardViewFrame()
-        return CGRectMake(frontFrame.origin.x, frontFrame.origin.y + 10.0, CGRectGetWidth(frontFrame), CGRectGetHeight(frontFrame))
+        return CGRect(x: frontFrame.origin.x, y: frontFrame.origin.y + 10.0, width: frontFrame.width, height: frontFrame.height)
     }
 
     func nopeFrontCardView() -> Void{
-        self.frontCardView.mdc_swipe(MDCSwipeDirection.Left)
+        self.frontCardView.mdc_swipe(MDCSwipeDirection.left)
     }
     func likeFrontCardView() -> Void{
-        self.frontCardView.mdc_swipe(MDCSwipeDirection.Right)
+        self.frontCardView.mdc_swipe(MDCSwipeDirection.right)
     }
 
-    @IBAction func likeBtnPressed(sender: AnyObject) {
+    @IBAction func likeBtnPressed(_ sender: AnyObject) {
         if (self.frontCardView != nil) {
             likeFrontCardView()
         }
         
     }
     
-    @IBAction func dislikeBtnPressed(sender: AnyObject) {
+    @IBAction func dislikeBtnPressed(_ sender: AnyObject) {
         if (self.frontCardView != nil) {
             nopeFrontCardView()
         }

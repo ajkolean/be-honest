@@ -36,16 +36,16 @@ class ChoosePostView: MDCSwipeToChooseView {
         super.init(frame: frame, options: options)
         self.post = post
         self.imageView.image = self.post.image
-        self.imageView.contentMode = UIViewContentMode.ScaleAspectFit;
-        self.imageView.backgroundColor = UIColor.whiteColor()
+        self.imageView.contentMode = UIViewContentMode.scaleAspectFit;
+        self.imageView.backgroundColor = UIColor.white
         
         if self.post.imagePath != nil {
             let imageRef = DataService.ds.REF_STORAGE.reference().child(self.post.imagePath!)
-            imageRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
+            imageRef.data(withMaxSize: 1 * 1024 * 1024) { (data, error) -> Void in
                 if (error != nil) {
                     print(error)
                 } else {
-                    self.contentMode = UIViewContentMode.ScaleAspectFill;
+                    self.contentMode = UIViewContentMode.scaleAspectFill;
                     self.imageView.image = UIImage(data: data!)
                     
                 }
@@ -55,8 +55,8 @@ class ChoosePostView: MDCSwipeToChooseView {
 
 
         
-        self.autoresizingMask = [UIViewAutoresizing.FlexibleHeight, UIViewAutoresizing.FlexibleWidth]
-        UIViewAutoresizing.FlexibleBottomMargin
+        self.autoresizingMask = [UIViewAutoresizing.flexibleHeight, UIViewAutoresizing.flexibleWidth]
+        UIViewAutoresizing.flexibleBottomMargin
         
         self.imageView.autoresizingMask = self.autoresizingMask
         constructInformationView()
@@ -69,14 +69,14 @@ class ChoosePostView: MDCSwipeToChooseView {
     
     func constructInformationView() -> Void{
         let bottomHeight:CGFloat = 75.0
-        let bottomFrame:CGRect = CGRectMake(0,
-                                            CGRectGetHeight(self.bounds) - bottomHeight,
-                                            CGRectGetWidth(self.bounds),
-                                            bottomHeight);
+        let bottomFrame:CGRect = CGRect(x: 0,
+                                            y: self.bounds.height - bottomHeight,
+                                            width: self.bounds.width,
+                                            height: bottomHeight);
         self.informationView = UIView(frame:bottomFrame)
-        self.informationView.backgroundColor = UIColor.whiteColor()
+        self.informationView.backgroundColor = UIColor.white
         self.informationView.clipsToBounds = true
-        self.informationView.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleTopMargin]
+        self.informationView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleTopMargin]
         self.addSubview(self.informationView)
         constructQuestionLabel()
        
@@ -85,28 +85,28 @@ class ChoosePostView: MDCSwipeToChooseView {
     func constructQuestionLabel() -> Void{
         let leftPadding:CGFloat = 10.0
         let topPadding:CGFloat = 5.0
-        let frame:CGRect = CGRectMake(leftPadding,
-                                      topPadding,
-                                      floor(CGRectGetWidth(self.informationView.frame) - leftPadding - leftPadding),
-                                      CGRectGetHeight(self.informationView.frame) - topPadding - topPadding)
+        let frame:CGRect = CGRect(x: leftPadding,
+                                      y: topPadding,
+                                      width: floor(self.informationView.frame.width - leftPadding - leftPadding),
+                                      height: self.informationView.frame.height - topPadding - topPadding)
         self.questionLabel = UILabel(frame:frame)
-        self.questionLabel.lineBreakMode = .ByWordWrapping 
+        self.questionLabel.lineBreakMode = .byWordWrapping 
         self.questionLabel.numberOfLines = 0
         self.questionLabel.font = UIFont(name: "HelveticaNeue", size: 18)
         self.questionLabel.adjustsFontSizeToFitWidth = true
         self.questionLabel.minimumScaleFactor = 0.5
-         self.questionLabel.baselineAdjustment = .AlignCenters
-        self.questionLabel.textAlignment = .Center
+         self.questionLabel.baselineAdjustment = .alignCenters
+        self.questionLabel.textAlignment = .center
         self.questionLabel.text = "\(post.question)"
         self.informationView .addSubview(self.questionLabel)
     }
  
-    func buildImageLabelViewLeftOf(x:CGFloat, image:UIImage, text:String) -> ImagelabelView{
+    func buildImageLabelViewLeftOf(_ x:CGFloat, image:UIImage, text:String) -> ImagelabelView{
         let frame:CGRect = CGRect(x:x-ChoosePostViewImageLabelWidth, y: 0,
                                   width: ChoosePostViewImageLabelWidth,
-                                  height: CGRectGetHeight(self.informationView.bounds))
+                                  height: self.informationView.bounds.height)
         let view:ImagelabelView = ImagelabelView(frame:frame, image:image, text:text)
-        view.autoresizingMask = UIViewAutoresizing.FlexibleLeftMargin
+        view.autoresizingMask = UIViewAutoresizing.flexibleLeftMargin
         return view
     }
 }

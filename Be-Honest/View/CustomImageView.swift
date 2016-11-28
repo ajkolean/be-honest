@@ -11,7 +11,7 @@ import UIKit
 
 class CustomImageView: UIImageView {
     
-    let progressIndicatorView = CircularLoaderView(frame: CGRectZero)
+    let progressIndicatorView = CircularLoaderView(frame: CGRect.zero)
     
    
     required init?(coder aDecoder: NSCoder) {
@@ -19,7 +19,7 @@ class CustomImageView: UIImageView {
         
         addSubview(self.progressIndicatorView)
         progressIndicatorView.frame = bounds
-        progressIndicatorView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        progressIndicatorView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
     }
     

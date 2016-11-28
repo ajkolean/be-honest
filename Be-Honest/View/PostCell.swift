@@ -24,12 +24,12 @@ class PostCell: UITableViewCell {
         
     }
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         postImg.layer.cornerRadius = BORDER_RADIUS
         postImg.clipsToBounds = true
     }
     
-    func confgureCell(post: Post, img: UIImage?) {
+    func confgureCell(_ post: Post, img: UIImage?) {
         self.post = post
         titleLabel.text = post.question
         
@@ -42,18 +42,18 @@ class PostCell: UITableViewCell {
                 self.postImg.image = img
             } else {
                 let request = DataService.ds.REF_STORAGE.reference().child(post.imagePath!)
-                downloadTask = request.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
+                downloadTask = request.data(withMaxSize: 1 * 1024 * 1024) { (data, error) -> Void in
                     if (error != nil) {
                         print(error)
                     } else {
                         let img = UIImage(data: data!)
                         self.postImg.image = img
                         self.postImg.progressIndicatorView.reveal()
-                        PostListVC.imageCache.setObject(img!, forKey: post.imagePath!)
+                        PostListVC.imageCache.setObject(img!, forKey: post.imagePath! as AnyObject)
                     }
                 }
                 
-                downloadTask!.observeStatus(.Progress) { snapshot in
+                downloadTask!.observe(.progress) { snapshot in
                     // Upload reported progress
                     if let progress = snapshot.progress {
                         print("this is progress \(CGFloat(progress.completedUnitCount) / CGFloat(progress.totalUnitCount))")

@@ -41,22 +41,22 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
 
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        openCameraBtn.hidden = true
-        openPhotoLibBtn.hidden = true
-        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        openCameraBtn.isHidden = true
+        openPhotoLibBtn.isHidden = true
+        imagePicker.dismiss(animated: true, completion: nil)
         postImg.image = image
         orginialImage = image
         blurFace()
     }
     
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let currentCharacterCount = textField.text?.characters.count ?? 0
         if (range.length + range.location > currentCharacterCount){
@@ -73,11 +73,11 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             orgImage = scaleAndRotateImage(orgImage)
            
             
-            let openGLContext = EAGLContext(API: .OpenGLES2)
-            let context = CIContext(EAGLContext: openGLContext)
+            let openGLContext = EAGLContext(api: .openGLES2)
+            let context = CIContext(eaglContext: openGLContext!)
             let filter = CIFilter(name: "CIPixellate")!
             filter.setValue(15, forKey: "inputScale")
-            let inputImage = CIImage(CGImage: orgImage.CGImage!)
+            let inputImage = CIImage(cgImage: orgImage.cgImage!)
             filter.setValue(inputImage, forKey: kCIInputImageKey)
             let fullPixellatedImage = filter.outputImage
             
@@ -86,11 +86,11 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             //Detect Face
             let options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
             let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: context, options: options)
-            let faces = faceDetector.featuresInImage(inputImage)
+            let faces = faceDetector?.features(in: inputImage)
             var maskImage: CIImage!
             let scale = (postImg.bounds.size.width / inputImage.extent.size.width +
                             postImg.bounds.size.height / inputImage.extent.size.height) / 2
-            for faceFeature in faces {
+            for faceFeature in faces! {
                 let centerX = faceFeature.bounds.origin.x + faceFeature.bounds.size.width / 2
                 let centerY = faceFeature.bounds.origin.y + faceFeature.bounds.size.height / 2
                 let radius = min(faceFeature.bounds.size.width, faceFeature.bounds.size.height) * scale
@@ -104,7 +104,7 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
                 ])!
             
                 print(radialGradient.attributes)
-                let radialGradientOutputImage = radialGradient.outputImage!.imageByCroppingToRect(inputImage.extent)
+                let radialGradientOutputImage = radialGradient.outputImage!.cropping(to: inputImage.extent)
                 if maskImage == nil {
                     maskImage = radialGradientOutputImage
                 } else {
@@ -123,9 +123,9 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
             blendFilter.setValue(maskImage, forKey: kCIInputMaskImageKey)
 
             let blendOutputImage = blendFilter.outputImage!
-            let blendCGImage = context.createCGImage(blendOutputImage, fromRect: blendOutputImage.extent)
+            let blendCGImage = context.createCGImage(blendOutputImage, from: blendOutputImage.extent)
             
-            blurImage = UIImage(CGImage: blendCGImage)
+            blurImage = UIImage(cgImage: blendCGImage!)
         }
         
         
@@ -133,17 +133,17 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     }
     
     
-    func scaleAndRotateImage(image: UIImage) -> UIImage {
+    func scaleAndRotateImage(_ image: UIImage) -> UIImage {
         let kMaxResolution: CGFloat = 640
         
-        let imgRef = image.CGImage
+        let imgRef = image.cgImage
         
-        let width = CGFloat(CGImageGetWidth(imgRef))
-        let height = CGFloat(CGImageGetHeight(imgRef))
+        let width = CGFloat((imgRef?.width)!)
+        let height = CGFloat((imgRef?.height)!)
         
         
-        var transform = CGAffineTransformIdentity
-        var bounds = CGRectMake(0, 0, width, height);
+        var transform = CGAffineTransform.identity
+        var bounds = CGRect(x: 0, y: 0, width: width, height: height);
         if width > kMaxResolution || height > kMaxResolution {
             let  ratio = width/height;
             if (ratio > 1) {
@@ -156,80 +156,80 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         }
         
         let scaleRatio = bounds.size.width / width;
-        let imageSize = CGSizeMake(CGFloat(CGImageGetWidth(imgRef)), CGFloat(CGImageGetHeight(imgRef)))
+        let imageSize = CGSize(width: CGFloat((imgRef?.width)!), height: CGFloat((imgRef?.height)!))
         let boundHeight: CGFloat?
         let orient: UIImageOrientation = image.imageOrientation;
         switch(orient) {
             
-        case UIImageOrientation.Up: //EXIF = 1
-            transform = CGAffineTransformIdentity;
+        case UIImageOrientation.up: //EXIF = 1
+            transform = CGAffineTransform.identity;
             break;
             
-        case UIImageOrientation.UpMirrored: //EXIF = 2
-            transform = CGAffineTransformMakeTranslation(imageSize.width, 0.0);
-            transform = CGAffineTransformScale(transform, -1.0, 1.0);
+        case UIImageOrientation.upMirrored: //EXIF = 2
+            transform = CGAffineTransform(translationX: imageSize.width, y: 0.0);
+            transform = transform.scaledBy(x: -1.0, y: 1.0);
             break;
             
-        case UIImageOrientation.Down: //EXIF = 3
-            transform = CGAffineTransformMakeTranslation(imageSize.width, imageSize.height);
-            transform = CGAffineTransformRotate(transform, CGFloat(M_PI));
+        case UIImageOrientation.down: //EXIF = 3
+            transform = CGAffineTransform(translationX: imageSize.width, y: imageSize.height);
+            transform = transform.rotated(by: CGFloat(M_PI));
             break;
             
-        case UIImageOrientation.DownMirrored: //EXIF = 4
-            transform = CGAffineTransformMakeTranslation(0.0, imageSize.height);
-            transform = CGAffineTransformScale(transform, 1.0, -1.0);
+        case UIImageOrientation.downMirrored: //EXIF = 4
+            transform = CGAffineTransform(translationX: 0.0, y: imageSize.height);
+            transform = transform.scaledBy(x: 1.0, y: -1.0);
             break;
             
-        case UIImageOrientation.LeftMirrored: //EXIF = 5
+        case UIImageOrientation.leftMirrored: //EXIF = 5
             boundHeight = bounds.size.height;
             bounds.size.height = bounds.size.width;
             bounds.size.width = boundHeight!;
-            transform = CGAffineTransformMakeTranslation(imageSize.height, imageSize.width);
-            transform = CGAffineTransformScale(transform, -1.0, 1.0);
-            transform = CGAffineTransformRotate(transform, 3.0 * CGFloat(M_PI / 2.0))
+            transform = CGAffineTransform(translationX: imageSize.height, y: imageSize.width);
+            transform = transform.scaledBy(x: -1.0, y: 1.0);
+            transform = transform.rotated(by: 3.0 * CGFloat(M_PI / 2.0))
             break;
             
-        case UIImageOrientation.Left: //EXIF = 6
+        case UIImageOrientation.left: //EXIF = 6
             boundHeight = bounds.size.height;
             bounds.size.height = bounds.size.width;
             bounds.size.width = boundHeight!;
-            transform = CGAffineTransformMakeTranslation(0.0, imageSize.width);
-            transform = CGAffineTransformRotate(transform, 3.0 * CGFloat(M_PI) / 2.0);
+            transform = CGAffineTransform(translationX: 0.0, y: imageSize.width);
+            transform = transform.rotated(by: 3.0 * CGFloat(M_PI) / 2.0);
             break;
             
-        case UIImageOrientation.RightMirrored: //EXIF = 7
+        case UIImageOrientation.rightMirrored: //EXIF = 7
             boundHeight = bounds.size.height;
             bounds.size.height = bounds.size.width;
             bounds.size.width = boundHeight!;
-            transform = CGAffineTransformMakeScale(-1.0, 1.0);
-            transform = CGAffineTransformRotate(transform, CGFloat(M_PI) / 2.0);
+            transform = CGAffineTransform(scaleX: -1.0, y: 1.0);
+            transform = transform.rotated(by: CGFloat(M_PI) / 2.0);
             break;
             
-        case UIImageOrientation.Right: //EXIF = 8
+        case UIImageOrientation.right: //EXIF = 8
             boundHeight = bounds.size.height;
             bounds.size.height = bounds.size.width;
             bounds.size.width = boundHeight!;
-            transform = CGAffineTransformMakeTranslation(imageSize.height, 0.0);
-            transform = CGAffineTransformRotate(transform, CGFloat(M_PI) / 2.0);
+            transform = CGAffineTransform(translationX: imageSize.height, y: 0.0);
+            transform = transform.rotated(by: CGFloat(M_PI) / 2.0);
             break;
             
         }
             UIGraphicsBeginImageContext(bounds.size);
             
-            let context: CGContextRef = UIGraphicsGetCurrentContext()!;
+            let context: CGContext = UIGraphicsGetCurrentContext()!;
             
-            if (orient == UIImageOrientation.Right || orient == UIImageOrientation.Left) {
-                CGContextScaleCTM(context, -scaleRatio, scaleRatio);
-                CGContextTranslateCTM(context, -height, 0);
+            if (orient == UIImageOrientation.right || orient == UIImageOrientation.left) {
+                context.scaleBy(x: -scaleRatio, y: scaleRatio);
+                context.translateBy(x: -height, y: 0);
             } else {
-                CGContextScaleCTM(context, scaleRatio, -scaleRatio);
-                CGContextTranslateCTM(context, 0, -height);
+                context.scaleBy(x: scaleRatio, y: -scaleRatio);
+                context.translateBy(x: 0, y: -height);
             }
             
-            CGContextConcatCTM(context, transform);
+            context.concatenate(transform);
             
-            CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, width, height), imgRef);
-            let imageCopy: UIImage = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsGetCurrentContext()?.draw(imgRef!, in: CGRect(x: 0, y: 0, width: width, height: height));
+            let imageCopy: UIImage = UIGraphicsGetImageFromCurrentImageContext()!;
             UIGraphicsEndImageContext();
             
             return imageCopy;
@@ -238,15 +238,15 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     
 
  
-    @IBAction func makePostBtnPressed(sender: AnyObject) {
+    @IBAction func makePostBtnPressed(_ sender: AnyObject) {
         
-        if let txt = questionField.text where txt != "" {
+        if let txt = questionField.text, txt != "" {
             if let img = postImg.image {
                 let imgData = UIImageJPEGRepresentation(img, 0.1)!
-                let uuid = NSUUID().UUIDString
+                let uuid = UUID().uuidString
                 let imgPath = "images/\(uuid)/image.jpg"
                 let request = DataService.ds.REF_STORAGE.reference().child(imgPath)
-                request.putData(imgData, metadata: nil) { metadata, error in
+                request.put(imgData, metadata: nil) { metadata, error in
                     if (error != nil) {
                         showErrorAlert("Image Upload Failed", message: "Image failed to save. Please try to submit post again!", controller: self)
                     } else {
@@ -256,10 +256,10 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
                                     "ratings": true,
                                     "numRatings": 0
                                     
-                                    ]
+                                    ] as [String : Any]
                         
                         DataService.ds.REF_POSTS.childByAutoId().setValue(post)
-                        self.dismissViewControllerAnimated(true, completion: nil)
+                        self.dismiss(animated: true, completion: nil)
                     }
                 }
             } else {
@@ -270,28 +270,28 @@ class AddPostVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
         }
     }
 
-    @IBAction func cancelBtnPressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func cancelBtnPressed(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func openCameraBtnPressed(sender: AnyObject) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+    @IBAction func openCameraBtnPressed(_ sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
             
-            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
             imagePicker.allowsEditing = false
-            self.presentViewController(imagePicker, animated: true, completion: nil)
+            self.present(imagePicker, animated: true, completion: nil)
         }
     }
 
-    @IBAction func openPhotoLibraryBtnPressed(sender: AnyObject) {
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
-            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+    @IBAction func openPhotoLibraryBtnPressed(_ sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
             imagePicker.allowsEditing = false
-            self.presentViewController(imagePicker, animated: true, completion: nil)
+            self.present(imagePicker, animated: true, completion: nil)
         }
     }
-    @IBAction func blurSwitchedPressed(sender: UISwitch) {
-        if sender.on {
+    @IBAction func blurSwitchedPressed(_ sender: UISwitch) {
+        if sender.isOn {
             postImg.image = blurImage
         } else {
             postImg.image = orginialImage

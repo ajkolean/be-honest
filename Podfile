@@ -8,6 +8,6 @@ target 'Be-Honest' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
-  pod 'Alamofire'
   pod "MDCSwipeToChoose"
+  pod 'Alamofire', '~> 4.0'
 end

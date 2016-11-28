@@ -10,14 +10,14 @@ import Foundation
 
 // Extension to create Pixellated image
 extension UIImage {
-    func pixellated(scale: Int = 8) -> UIImage? {
+    func pixellated(_ scale: Int = 8) -> UIImage? {
         guard let
             ciImage = UIKit.CIImage(image: self),
-            filter = CIFilter(name: "CIPixellate") else { return nil }
+            let filter = CIFilter(name: "CIPixellate") else { return nil }
         filter.setValue(ciImage, forKey: "inputImage")
         filter.setValue(scale, forKey: "inputScale")
         guard let output = filter.outputImage else { return nil }
-        return UIImage(CIImage: output)
+        return UIImage(ciImage: output)
     }
 }
 

@@ -13,7 +13,7 @@ class LoginButtonView: UIView {
     override func awakeFromNib() {
         layer.cornerRadius = 5.0
         layer.borderWidth = 2.0
-        layer.borderColor = UIColor(red: 237/255.0, green: 231/255.0, blue: 246/255.0, alpha: 0.8).CGColor
+        layer.borderColor = UIColor(red: 237/255.0, green: 231/255.0, blue: 246/255.0, alpha: 0.8).cgColor
     }
 
 }

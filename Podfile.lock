@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (3.4.1)
+  - Alamofire (4.2.0)
   - Firebase (3.4.0):
     - Firebase/Core (= 3.4.0)
   - Firebase/Analytics (3.4.0):
@@ -44,7 +44,7 @@ PODS:
   - MDCSwipeToChoose (0.2.3)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 4.0)
   - Firebase
   - Firebase/Auth
   - Firebase/Core
@@ -53,7 +53,7 @@ DEPENDENCIES:
   - MDCSwipeToChoose
 
 SPEC CHECKSUMS:
-  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   Firebase: 754562547af419cc2f4b15247fee419081924bc2
   FirebaseAnalytics: 228be2991cb28efb96cdafc4d62f64680e615c69
   FirebaseAuth: 26fd291c3b552fc9658420b867520d5ae080421c
@@ -67,6 +67,6 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   MDCSwipeToChoose: 56239d98b4558c66e7c3c9069482befd26092270
 
-PODFILE CHECKSUM: d2aeef5614d5090e9d4bb1acc465417f686bbc5f
+PODFILE CHECKSUM: b93667b2acbab0224662e37c0fb2c241a8b1e5e0
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0.beta.1
